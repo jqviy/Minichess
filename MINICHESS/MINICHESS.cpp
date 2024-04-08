@@ -5,7 +5,7 @@
 
 int main()
 {
-    std::cout << "ROBI (AMIGO VIEJO)!\n";
+    std::cout << "ROBI (CONOCIDO)\n";
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
