@@ -1,6 +1,6 @@
 #pragma once
 class Pieza
 {
-	void mover();
+	void mover(int a);
 };
 
