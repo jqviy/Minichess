@@ -1,5 +1,6 @@
 #include "Mundo.h"
 #include "freeglut.h"
+#include "ETSIDI.h"
 
 Mundo mundo;
 
