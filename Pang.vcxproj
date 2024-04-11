@@ -19,16 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Pieza.h" />
     <ClInclude Include="src\Mundo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e575fade-b6eb-4154-a1ed-8067a12eae98}</ProjectGuid>
+    <ProjectGuid>{9DD3413D-6817-447F-B6EE-C59FD8286EF6}</ProjectGuid>
     <RootNamespace>Pang</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
