@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="src\inicio.cpp" />
     <ClCompile Include="src\principal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Pieza.h" />
     <ClInclude Include="src\inicio.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
