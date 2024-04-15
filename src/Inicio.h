@@ -7,7 +7,7 @@
 #include "ETSIDI.h"
 
 //********************************************************************************
-//Clase destinada a la creacón de la pantalla inicial previa al tablero de Ajedrez
+//Clase destinada a la creacion de la pantalla inicial previa al tablero de Ajedrez
 //********************************************************************************
 
 using ETSIDI::Sprite;

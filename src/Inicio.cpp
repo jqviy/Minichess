@@ -12,3 +12,4 @@ void Inicio::dibuja()
 	portada.setSize(14.9, 11.175);
 	portada.draw();
 }
+
