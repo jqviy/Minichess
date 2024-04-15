@@ -7,7 +7,7 @@ void Inicio::dibuja()
 		4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			   // definimos hacia arriba (eje Y)
 
-	playMusica("sonidos/musica_inicio.mp3");
+	playMusica("sonidos/musica_inicio.mp3",true); 
 	portada.setCenter(3.6, 1.45);
 	portada.setSize(14.9, 11.175);
 	portada.draw();
