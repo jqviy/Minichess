@@ -20,10 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\inicio.cpp" />
+    <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\principal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\inicio.h" />
+    <ClInclude Include="src\Pieza.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
