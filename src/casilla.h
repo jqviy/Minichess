@@ -13,6 +13,7 @@ public:
 	static bool mRey(casilla inicio, casilla fin);
 	static bool mCaballo(casilla inicio, casilla fin);
 	static bool noMoverDiagonal(casilla inicio, casilla fin);
+    static bool mPeonBlanco(casilla inicio, casilla fin);
 
 };
 

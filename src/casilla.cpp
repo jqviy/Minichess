@@ -34,3 +34,10 @@ bool casilla::noMoverDiagonal(casilla inicio, casilla fin)
 	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
 	return false;
 }
+
+//movimiento peon blanco
+bool casilla::mPeonBlanco(casilla inicio, casilla fin)
+{
+	if (fin.fila == inicio.fila + 1 && fin.columna == inicio.columna) return true;
+	return false;
+}

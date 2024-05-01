@@ -1,10 +1,11 @@
 #include "freeglut.h"
 #include "ETSIDI.h"
 #include "inicio.h"
-
+#include "ajedrez.h"
 
 Inicio inicio;
-
+Ajedrez ajedrez;
+int start = 0;
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
@@ -50,8 +51,8 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	//funciones de dibujo
-
-	inicio.dibuja();
+	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
+	else inicio.dibuja();
 
 	
 
@@ -61,7 +62,18 @@ void OnDraw(void)
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
-	
+	switch (key)
+	{
+		//START
+	case ' ':
+		if (start == 0)
+		{
+			start = 1;
+			stopMusica();
+		}
+	default:
+		break;
+	}
 
 	glutPostRedisplay();
 }
