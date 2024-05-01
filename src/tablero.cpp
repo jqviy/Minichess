@@ -1,8 +1,39 @@
 #include "tablero.h"
 #include "freeglut.h"
 
-Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20) {}
+Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
+{
+    for (int fila = 0; fila < dimension; fila++)
+    {
+        for (int columna = 0; columna < dimension; columna++)
+        {
+            casilla[fila][columna] = nullptr;
+        }
+    }
 
+    casilla[0][3] = new Rey(Pieza::BLANCA);
+    casilla[5][3] = new Rey(Pieza::NEGRA);
+    casilla[0][0] = new Torre(Pieza::BLANCA);
+    casilla[0][5] = new Torre(Pieza::BLANCA);
+    casilla[5][0] = new Torre(Pieza::NEGRA);
+    casilla[5][5] = new Torre(Pieza::NEGRA);
+    casilla[0][2] = new Reina(Pieza::BLANCA);
+    casilla[5][2] = new Reina(Pieza::NEGRA);
+    casilla[0][1] = new Caballo(Pieza::BLANCA);
+    casilla[0][4] = new Caballo(Pieza::BLANCA);
+    casilla[5][1] = new Caballo(Pieza::NEGRA);
+    casilla[5][4] = new Caballo(Pieza::NEGRA);
+    for (int i = 0; i < 6; i++)
+    {
+        casilla[1][i] = new Peon(Pieza::BLANCA);
+        casilla[4][i] = new Peon(Pieza::NEGRA);
+    }
+    for (int i = 0; i < 30; i++)
+    {
+        NumComidas[i] = nullptr;
+    }
+
+}
 
 
 void Tablero::dibuja()

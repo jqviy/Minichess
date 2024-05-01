@@ -3,6 +3,6 @@
 class Torre:public Pieza
 {
 public:
-	Torre(COLOR color) :Pieza(color, TORRE, "Torreblanca.png", "Torre.png") {}
+	Torre(COLOR color) :Pieza(color, TORRE, "TorreBlanca.png", "TorreNegra.png") {}
 };
 

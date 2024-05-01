@@ -3,6 +3,6 @@
 class Rey:public Pieza
 {
 public:
-	Rey(COLOR color) :Pieza(color, REY, "Reyblanco.png", "Rey.png") {}
+	Rey(COLOR color) :Pieza(color, REY, "ReyBlanco.png", "ReyNegro.png") {}
 };
 

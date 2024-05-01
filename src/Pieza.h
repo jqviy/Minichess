@@ -11,18 +11,20 @@ public:
 	//tipo de la pieza
 	enum TIPO { NF = -1, PEON, CABALLO, REINA, REY, TORRE };
 
-	Pieza(){tipo = NF; color = NS; posx = -1; posy = -1;}
-	Pieza(TIPO t, COLOR c, int x, int y):tipo(t),color(c),posx(x),posy(y){}
+	
+	
 	Pieza(COLOR c, TIPO p, const char* im_b, const char* im_n) :
 		color(c),
 		tipo(p),
-		imagen(c == BLANCA ? im_b : im_n) {}
+		imagen(c == BLANCA ? im_b : im_n)
+	{
+		imagen.setCenter(0.4, 0.4);
+		imagen.setSize(0.8, 0.8);
+	};
 
 	TIPO getPieza() { return tipo; }
 	COLOR getColor() { return color; }
 private:
-	int posx;
-	int posy;
 	TIPO tipo = NF;
 	COLOR color = NS;
 	Sprite imagen;

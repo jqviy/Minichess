@@ -2,6 +2,7 @@
 #include "Pieza.h"
 class Peon : public Pieza
 {
-	Peon(COLOR color) :Pieza(color, PEON, "Peonblanco.png", "Peon.png") {}
+public:
+	Peon(COLOR color) :Pieza(color, PEON, "PeonBlanco.png", "PeonNegro.png") {}
 };
 
