@@ -27,3 +27,10 @@ bool casilla::mCaballo(casilla inicio, casilla fin)
 	if (((abs(fin.fila - inicio.fila) == 1) && (abs(fin.columna - inicio.columna) == 2)) || ((abs(fin.fila - inicio.fila) == 2) && (abs(fin.columna - inicio.columna) == 1))) return true;
 	return false;
 }
+
+//caso de pulsar misma casilla en movimiento diagonal
+bool casilla::noMoverDiagonal(casilla inicio, casilla fin)
+{
+	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
+	return false;
+}
