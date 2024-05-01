@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\casilla.cpp" />
     <ClCompile Include="src\inicio.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\principal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\casilla.h" />
     <ClInclude Include="src\inicio.h" />
     <ClInclude Include="src\Pieza.h" />
   </ItemGroup>
