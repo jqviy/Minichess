@@ -28,10 +28,17 @@ bool casilla::mCaballo(casilla inicio, casilla fin)
 	return false;
 }
 
-//caso de pulsar misma casilla en movimiento diagonal
+//comprobar haber pulsado la misma casilla en movimiento diagonal
 bool casilla::noMoverDiagonal(casilla inicio, casilla fin)
 {
 	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
+	return false;
+}
+
+//primer movimiento peon blanco
+bool casilla::mPrimeroPeonBlanco(casilla inicio, casilla fin)
+{
+	if (fin.fila == inicio.fila + 2 && fin.columna == inicio.columna) return true;
 	return false;
 }
 
@@ -39,5 +46,32 @@ bool casilla::noMoverDiagonal(casilla inicio, casilla fin)
 bool casilla::mPeonBlanco(casilla inicio, casilla fin)
 {
 	if (fin.fila == inicio.fila + 1 && fin.columna == inicio.columna) return true;
+	return false;
+}
+
+//movimiento diagonal del peon blanco
+bool casilla::mPeonDiagonalBlanco(casilla inicio, casilla fin)
+{
+	if ((abs(fin.columna - inicio.columna) == 1) && (fin.fila == inicio.fila + 1)) return true;
+	return false;
+}
+
+//primer movimiento peon negro
+bool casilla::mPrimeroPeonNegro(casilla inicio, casilla fin)
+{
+	if (fin.fila == inicio.fila - 2 && fin.columna == inicio.columna) return true;
+	return false;
+}
+//movimiento peon negro
+bool casilla::mPeonNegro(casilla inicio, casilla fin)
+{
+	if (fin.fila == inicio.fila - 1 && fin.columna == inicio.columna) return true;
+	return false;
+}
+
+//movimiento para comer del peon negro
+bool casilla::mPeonDiagonalNegro(casilla inicio, casilla fin)
+{
+	if ((abs(fin.columna - inicio.columna) == 1) && (fin.fila == inicio.fila - 1)) return true;
 	return false;
 }
