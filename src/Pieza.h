@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include "ETSIDI.h"
+#include <freeglut.h>
+#include "casilla.h"
 using namespace ETSIDI;
 class Pieza
 {	
@@ -11,7 +13,9 @@ public:
 	//tipo de la pieza
 	enum TIPO { NF = -1, PEON, CABALLO, REINA, REY, TORRE };
 
-	
+	/*virtual void dibuja() {
+		imagen.draw();
+	}*/
 	
 	Pieza(COLOR c, TIPO p, const char* im_b, const char* im_n) :
 		color(c),
@@ -20,6 +24,7 @@ public:
 	{
 		imagen.setCenter(0.4, 0.4);
 		imagen.setSize(0.8, 0.8);
+		imagen.draw();
 	};
 
 	TIPO getPieza() { return tipo; }

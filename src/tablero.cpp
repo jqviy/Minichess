@@ -28,7 +28,7 @@ Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
         casilla[1][i] = new Peon(Pieza::BLANCA);
         casilla[4][i] = new Peon(Pieza::NEGRA);
     }
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 22; i++)
     {
         NumComidas[i] = nullptr;
     }

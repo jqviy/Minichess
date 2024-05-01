@@ -5,6 +5,6 @@ class Caballo : public Pieza
 
 {
 public:
-	Caballo(COLOR color) :Pieza(color, CABALLO, "CaballoBlanco.png", "CaballoNegro.png") {}
+	Caballo(COLOR color) :Pieza(color, CABALLO, "imagenes/CaballoBlanco.png", "imagenes/CaballoNegro.png") {}
 };
 
