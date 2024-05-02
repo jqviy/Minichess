@@ -5,8 +5,10 @@
 #include "Caballo.h"
 #include "Peon.h"
 #include "ETSIDI.h"
+
 #define NumFilas 6
 #define NumColumnas 6
+
 
 class Tablero
 {
@@ -16,9 +18,12 @@ class Tablero
     double z_ojo;
 
 public:
-    Pieza* casilla[NumFilas][NumColumnas];
+    Pieza* celda[NumFilas][NumColumnas];
     Pieza* NumComidas[22];
-    Tablero(); // Constructor
+    Tablero();
+    
+
+    Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
     void dibuja();
     void inicializa();
     void setDimension(int dim);

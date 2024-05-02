@@ -7,26 +7,26 @@ Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
     {
         for (int columna = 0; columna < dimension; columna++)
         {
-            casilla[fila][columna] = nullptr;
+            celda[fila][columna] = nullptr;
         }
     }
 
-    casilla[0][3] = new Rey(Pieza::BLANCA);
-    casilla[5][3] = new Rey(Pieza::NEGRA);
-    casilla[0][0] = new Torre(Pieza::BLANCA);
-    casilla[0][5] = new Torre(Pieza::BLANCA);
-    casilla[5][0] = new Torre(Pieza::NEGRA);
-    casilla[5][5] = new Torre(Pieza::NEGRA);
-    casilla[0][2] = new Reina(Pieza::BLANCA);
-    casilla[5][2] = new Reina(Pieza::NEGRA);
-    casilla[0][1] = new Caballo(Pieza::BLANCA);
-    casilla[0][4] = new Caballo(Pieza::BLANCA);
-    casilla[5][1] = new Caballo(Pieza::NEGRA);
-    casilla[5][4] = new Caballo(Pieza::NEGRA);
+    celda[0][3] = new Rey(Pieza::BLANCA);
+    celda[5][3] = new Rey(Pieza::NEGRA);
+    celda[0][0] = new Torre(Pieza::BLANCA);
+    celda[0][5] = new Torre(Pieza::BLANCA);
+    celda[5][0] = new Torre(Pieza::NEGRA);
+    celda[5][5] = new Torre(Pieza::NEGRA);
+    celda[0][2] = new Reina(Pieza::BLANCA);
+    celda[5][2] = new Reina(Pieza::NEGRA);
+    celda[0][1] = new Caballo(Pieza::BLANCA);
+    celda[0][4] = new Caballo(Pieza::BLANCA);
+    celda[5][1] = new Caballo(Pieza::NEGRA);
+    celda[5][4] = new Caballo(Pieza::NEGRA);
     for (int i = 0; i < 6; i++)
     {
-        casilla[1][i] = new Peon(Pieza::BLANCA);
-        casilla[4][i] = new Peon(Pieza::NEGRA);
+        celda[1][i] = new Peon(Pieza::BLANCA);
+        celda[4][i] = new Peon(Pieza::NEGRA);
     }
     for (int i = 0; i < 22; i++)
     {
@@ -36,7 +36,7 @@ Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
 }
 
 
-void Tablero::dibuja()
+/*void Tablero::dibuja()
 
 {
     if (dimension == 6) {
@@ -105,4 +105,26 @@ void Tablero::inicializa()
 void Tablero::setDimension(int dim)
 {
     dimension = dim;
+}*/
+
+void Tablero::dibuja()
+{
+    
+    //Dibuja el tablero por completo
+    for (int fila = 0; fila < NumFilas; fila++)
+    {
+        for (int columna = 0; columna < NumColumnas; columna++)
+        {
+            glDisable(GL_LIGHTING);
+            if ((fila + columna) % 2 == 0) glColor3ub(217, 230, 250);
+            else glColor3ub(86, 107, 140);
+            glBegin(GL_POLYGON);
+            glVertex2d(columna, fila);
+            glVertex2d(columna + 1.0, fila);
+            glVertex2d(columna + 1.0, fila + 1.0);
+            glVertex2d(columna, fila + 1.0);
+            glEnd();
+            glEnable(GL_LIGHTING);
+        }
+    }
 }

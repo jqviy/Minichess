@@ -4,7 +4,10 @@
 #include "ETSIDI.h"
 #include <freeglut.h>
 #include "casilla.h"
+
 using namespace ETSIDI;
+
+
 class Pieza
 {	
 public:
@@ -29,6 +32,7 @@ public:
 
 	TIPO getPieza() { return tipo; }
 	COLOR getColor() { return color; }
+	virtual void dibuja() { imagen.draw(); }
 private:
 	TIPO tipo = NF;
 	COLOR color = NS;
