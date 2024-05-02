@@ -12,5 +12,8 @@ class Ajedrez
 public:
 
 	void dibuja();
+	void detectaClick(int button, int state, int x, int y);
+
 };
+
 

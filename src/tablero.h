@@ -25,6 +25,6 @@ public:
 
     Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
     void dibuja();
-    void inicializa();
-    void setDimension(int dim);
+    /*void inicializa();
+    void setDimension(int dim);*/
 };

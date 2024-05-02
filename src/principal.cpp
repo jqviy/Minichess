@@ -9,7 +9,8 @@ int start = 0;
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
-void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
+void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla
+void onMouse(int button, int state, int x, int y); // Declaración de onMouse()
 
 int main(int argc,char* argv[])
 {
@@ -20,6 +21,7 @@ int main(int argc,char* argv[])
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutCreateWindow("MiJuego");
 
+	
 	//habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
@@ -32,6 +34,7 @@ int main(int argc,char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
+	glutMouseFunc(onMouse);
 
 	//POSIBLE INICIALIZACION
 		
@@ -77,6 +80,12 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	glutPostRedisplay();
 }
+void onMouse(int button, int state, int x, int y)
+{
+	ajedrez.detectaClick(button,  state,  x,  y);
+}
+
+
 
 void OnTimer(int value)
 {
