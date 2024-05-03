@@ -34,7 +34,7 @@ public:
 	COLOR getColor() { return color; }
 	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero& celda);
 	virtual void dibuja() { imagen.draw(); }
-private:
+protected:
 	TIPO tipo = NF;
 	COLOR color = NS;
 	Sprite imagen;
