@@ -7,7 +7,7 @@
 
 using namespace ETSIDI;
 
-
+class Tablero;
 class Pieza
 {	
 public:
@@ -32,6 +32,7 @@ public:
 
 	TIPO getPieza() { return tipo; }
 	COLOR getColor() { return color; }
+	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero& celda);
 	virtual void dibuja() { imagen.draw(); }
 private:
 	TIPO tipo = NF;
