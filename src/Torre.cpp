@@ -3,10 +3,10 @@
 #include "tablero.h"
 
 
-bool Torre::movimiento_valido(casilla origen, casilla destino, Tablero& tablero)
+bool Torre::movimiento_valido(casilla inicio, casilla fin, Tablero& celda)
 {
-	if (casilla::mLineal(origen, destino) == true)
-		return Pieza::movimiento_valido(origen, destino, tablero);
+	if (casilla::mLineal(inicio, fin) == true)
+		return Pieza::movimiento_valido(inicio, fin, celda);
 
 	return false;
 }
