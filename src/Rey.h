@@ -4,5 +4,6 @@ class Rey:public Pieza
 {
 public:
 	Rey(COLOR color) :Pieza(color, REY, "imagenes/ReyBlanco.png", "imagenes/ReyNegro.png") {}
+	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero& celda);
 };
 

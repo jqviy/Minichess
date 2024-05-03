@@ -14,6 +14,7 @@ bool casilla::mDiagonal(casilla inicio, casilla fin)
 	return false;
 }
 
+//comprobar haber pulsado la misma casilla en movimiento diagonal
 bool casilla::noSaltarDiagonal(casilla inicio, casilla fin)
 {
 	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
@@ -34,12 +35,6 @@ bool casilla::mCaballo(casilla inicio, casilla fin)
 	return false;
 }
 
-//comprobar haber pulsado la misma casilla en movimiento diagonal
-bool casilla::noMoverDiagonal(casilla inicio, casilla fin)
-{
-	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
-	return false;
-}
 
 //primer movimiento peon blanco
 bool casilla::mPrimeroPeonBlanco(casilla inicio, casilla fin)
