@@ -4,5 +4,7 @@ class Peon : public Pieza
 {
 public:
 	Peon(COLOR color) :Pieza(color, PEON, "imagenes/PeonBlanco.png", "imagenes/PeonNegro.png") {}
+		virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero & celda);
+	
 };
 
