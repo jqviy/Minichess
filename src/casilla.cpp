@@ -14,6 +14,12 @@ bool casilla::mDiagonal(casilla inicio, casilla fin)
 	return false;
 }
 
+bool casilla::noSaltarDiagonal(casilla inicio, casilla fin)
+{
+	if ((fin.columna - inicio.columna == fin.fila - inicio.fila) && fin.columna != inicio.columna && fin.fila != inicio.fila) return true;
+	return false;
+}
+
 //movimiento del rey
 bool casilla::mRey(casilla inicio, casilla fin)
 {
