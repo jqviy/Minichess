@@ -149,8 +149,7 @@ void Tablero::dibuja(Ajedrez& ajedrez)
     //Dibuja de un color amarillo las casillas a las que es posible mover la pieza seleccionada
     for (int i = 0; i < ajedrez.getLegalMoves(); i++)
     {
-        if ((ajedrez[i]->fila + ajedrez[i]->columna) % 2 == 0)  glColor3ub(255, 255, 0);
-        else glColor3ub(255, 255, 0);
+        glColor3ub(255, 255, 0);
         glBegin(GL_POLYGON);
         glVertex3d(ajedrez[i]->columna, ajedrez[i]->fila, 0.0);
         glVertex3d(ajedrez[i]->columna + 1.0, ajedrez[i]->fila, 0.0);
