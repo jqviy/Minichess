@@ -51,6 +51,7 @@ void Ajedrez::Click_fin(casilla o)
 		if (tablero[seg] != nullptr)
 		{
 			cout << "Pieza comida " << endl;
+	
 		}
 
 		//Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero

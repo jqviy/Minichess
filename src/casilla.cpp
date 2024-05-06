@@ -8,9 +8,10 @@ bool casilla::mLineal(casilla inicio, casilla fin)
 }
 
 //movimiento diagonal
-bool casilla::mDiagonal(casilla inicio, casilla fin)
+bool casilla::mDiagonal(casilla inicio, casilla fin) 
 {
-	if (((abs(fin.fila - inicio.fila) + abs(fin.columna - fin.columna)) % 2 == 0) && (abs(fin.fila - inicio.fila) == abs(fin.columna - inicio.columna))) return true;
+	if (((abs(fin.fila - inicio.fila) + abs(fin.columna - inicio.columna)) % 2 == 0) && (abs(fin.fila - inicio.fila) == abs(fin.columna - inicio.columna)))
+		return true;
 	return false;
 }
 
