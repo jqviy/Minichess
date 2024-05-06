@@ -8,7 +8,7 @@ bool Peon::movimiento_valido(casilla inicio, casilla fin, Tablero& celda) {
 		{
 			if (inicio.fila == 1)
 			{
-				if ((casilla::mPrimeroPeonBlanco(inicio, fin) == true && celda[fin] == nullptr) || (casilla::mPeonBlanco(inicio, fin) == true && celda[fin] == nullptr) || ((casilla::mPeonDiagonalBlanco(inicio, fin) == true) && celda[fin] != nullptr && celda[fin]->getColor() != color))
+				if ((casilla::mPeonBlanco(inicio, fin) == true && celda[fin] == nullptr) || ((casilla::mPeonDiagonalBlanco(inicio, fin) == true) && celda[fin] != nullptr && celda[fin]->getColor() != color))
 					return Pieza::movimiento_valido(inicio, fin, celda);
 
 			}
@@ -25,13 +25,13 @@ bool Peon::movimiento_valido(casilla inicio, casilla fin, Tablero& celda) {
 
 		else if (color == NEGRA)
 		{
-			if (inicio.fila == 6)
+			if (inicio.fila == 4)
 			{
-				if ((casilla::mPrimeroPeonNegro(inicio, fin) == true && celda[fin] == nullptr) || (casilla::mPeonNegro(inicio, fin) == true && celda[fin] == nullptr) || ((casilla::mPeonDiagonalNegro(inicio, fin) == true) && celda[fin] != nullptr && celda[fin]->getColor() != color))
+				if ((casilla::mPeonNegro(inicio, fin) == true && celda[fin] == nullptr) || ((casilla::mPeonDiagonalNegro(inicio, fin) == true) && celda[fin] != nullptr && celda[fin]->getColor() != color))
 					return Pieza::movimiento_valido(inicio, fin, celda);
 			}
 
-			else if (inicio.fila != 6)
+			else if (inicio.fila != 4)
 			{
 				if ((casilla::mPeonNegro(inicio, fin) == true) && celda[fin] == nullptr)
 					return Pieza::movimiento_valido(inicio, fin, celda);

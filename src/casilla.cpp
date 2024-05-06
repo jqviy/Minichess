@@ -76,3 +76,10 @@ bool casilla::mPeonDiagonalNegro(casilla inicio, casilla fin)
 	if ((abs(fin.columna - inicio.columna) == 1) && (fin.fila == inicio.fila - 1)) return true;
 	return false;
 }
+
+//para saber si una casilla está fuera del tablero
+bool casilla::fueraTablero(casilla c)
+{
+	if (c.fila > 5 || c.fila < 0 || c.columna > 5 || c.columna < 0) return true;
+	return false;
+}

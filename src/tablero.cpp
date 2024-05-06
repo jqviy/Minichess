@@ -1,5 +1,5 @@
 #include "tablero.h"
-#include "freeglut.h"
+#include "ajedrez.h"
 
 Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
 {
@@ -35,6 +35,43 @@ Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
 
 }
 
+//Metodo encargado del movimiento de las piezas del tablero
+void Tablero::cambiar_estado_tab(casilla inicio, casilla fin)
+{
+    //PIEZAS COMIDAS
+    if (celda[fin.fila][fin.columna] != nullptr)
+    {
+        NumComidas[size_NumComidas++] = celda[fin.fila][fin.columna];
+    }
+
+    //CAMBIAR ESTADO NORMAL 
+    else
+        mov_estado_tab(inicio, fin);
+}
+
+//Cambiar el estado del tablero 
+void Tablero::mov_estado_tab(casilla inicio, casilla fin)
+{
+    celda[fin.fila][fin.columna] = celda[inicio.fila][inicio.columna];
+    celda[inicio.fila][inicio.columna] = nullptr;
+}
+
+//Metodo que elimina todas las piezas del tablero (Utilizado al finalizar el juego)
+void Tablero::limpiar_Tablero()
+{
+    for (int fila = 0; fila < NumFilas; fila++)
+    {
+        for (int columna = 0; columna < NumColumnas; columna++)
+        {
+            celda[fila][columna] = nullptr;
+        }
+    }
+    for (int i = 0; i < size_NumComidas; i++)
+    {
+        NumComidas[i] = nullptr;
+    }
+    size_NumComidas = 0;
+}
 
 /*void Tablero::dibuja()
 
@@ -107,9 +144,21 @@ void Tablero::setDimension(int dim)
     dimension = dim;
 }*/
 
-void Tablero::dibuja()
+void Tablero::dibuja(Ajedrez& ajedrez)
 {
-    
+    //Dibuja de un color amarillo las casillas a las que es posible mover la pieza seleccionada
+    for (int i = 0; i < ajedrez.getLegalMoves(); i++)
+    {
+        if ((ajedrez[i]->fila + ajedrez[i]->columna) % 2 == 0)  glColor3ub(255, 255, 0);
+        else glColor3ub(255, 255, 0);
+        glBegin(GL_POLYGON);
+        glVertex3d(ajedrez[i]->columna, ajedrez[i]->fila, 0.0);
+        glVertex3d(ajedrez[i]->columna + 1.0, ajedrez[i]->fila, 0.0);
+        glVertex3d(ajedrez[i]->columna + 1.0, ajedrez[i]->fila + 1.0, 0.0);
+        glVertex3d(ajedrez[i]->columna, ajedrez[i]->fila + 1.0, 0.0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+    }
     //Dibuja el tablero por completo
     for (int fila = 0; fila < NumFilas; fila++)
     {
@@ -119,12 +168,43 @@ void Tablero::dibuja()
             if ((fila + columna) % 2 == 0) glColor3ub(217, 230, 250);
             else glColor3ub(86, 107, 140);
             glBegin(GL_POLYGON);
-            glVertex2d(columna, fila);
-            glVertex2d(columna + 1.0, fila);
-            glVertex2d(columna + 1.0, fila + 1.0);
-            glVertex2d(columna, fila + 1.0);
+            glVertex3d(columna, fila, 0.0);
+            glVertex3d(columna + 1.0, fila, 0.0);
+            glVertex3d(columna + 1.0, fila + 1.0, 0.0);
+            glVertex3d(columna, fila + 1.0, 0.0);
             glEnd();
             glEnable(GL_LIGHTING);
         }
     }
+
+    //Dibuja las piezas comidas
+    int ColumnaB = -1, ColumnaN = 9, Columna = 0;
+    int FilaB = NumFilas - 1, FilaN = NumFilas - 1, Fila = NumFilas - 1;
+    int blancas = 0, negras = 0;
+    for (int i = 0; i < 22; i++) {
+        if (NumComidas[i] != nullptr) {
+            if (NumComidas[i]->getColor() == Pieza::BLANCA) {
+                if (blancas == NumFilas) {
+                    FilaB = NumFilas - 1;
+                    ColumnaB = -2;
+                }
+                Fila = FilaB--;
+                Columna = ColumnaB;
+                blancas++;
+            }
+            else {
+                if (negras == NumFilas) {
+                    FilaN = NumFilas - 1;
+                    ColumnaN = 10;
+                }
+                Fila = FilaN--;
+                Columna = ColumnaN;
+                negras++;
+            }
+            glTranslatef(Columna, Fila, 0);
+            NumComidas[i]->dibuja();
+            glTranslatef(-Columna, -Fila, 0);
+        }
+    }
+
 }

@@ -9,7 +9,7 @@
 #define NumFilas 6
 #define NumColumnas 6
 
-
+class Ajedrez;
 class Tablero
 {
     int dimension;
@@ -20,11 +20,17 @@ class Tablero
 public:
     Pieza* celda[NumFilas][NumColumnas];
     Pieza* NumComidas[22];
+    int size_NumComidas = 0;
     Tablero();
     
-
     Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
-    void dibuja();
+
+    void cambiar_estado_tab(casilla inicio, casilla fin);
+    void mov_estado_tab(casilla inicio, casilla fin);
+
+    void limpiar_Tablero();
+
+    void dibuja(Ajedrez& ajedrez);
     /*void inicializa();
     void setDimension(int dim);*/
 };

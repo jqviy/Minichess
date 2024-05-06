@@ -8,7 +8,7 @@ Ajedrez ajedrez;
 int start = 0;
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
-void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
+//void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla
 void onMouse(int button, int state, int x, int y); // Declaración de onMouse()
 
@@ -32,7 +32,7 @@ int main(int argc,char* argv[])
 
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
-	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	//glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 	glutMouseFunc(onMouse);
 
@@ -80,19 +80,28 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	glutPostRedisplay();
 }
+
+void onMouse(int button, int state, int x, int y)
+{
+	bool down = (state == GLUT_DOWN);
+	if (button == GLUT_LEFT_BUTTON)
+		ajedrez.detectaClick(x, y, button, down);
+	glutPostRedisplay();
+}
+/*
 void onMouse(int button, int state, int x, int y)
 {
 	ajedrez.detectaClick(button,  state,  x,  y);
-}
+}*/
 
 
 
-void OnTimer(int value)
+/*void OnTimer(int value)
 {
 //poner aqui el código de animacion
 // 
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);
 	glutPostRedisplay();
-}
+}*/
 

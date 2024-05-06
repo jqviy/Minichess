@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+using namespace std;
 
 class casilla
 {
@@ -19,6 +20,6 @@ public:
 	static bool mPrimeroPeonNegro(casilla inicio, casilla fin);
 	static bool mPeonNegro(casilla inicio, casilla fin);
 	static bool mPeonDiagonalNegro(casilla inicio, casilla fin);
-
+	static bool fueraTablero(casilla c);
 };
 

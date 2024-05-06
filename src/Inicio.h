@@ -17,6 +17,6 @@ using ETSIDI::stopMusica;
 class Inicio
 {
 public:
-	Sprite portada{ "imagenes/Inicio_ajedrez.png" };
+	Sprite portada{ "imagenes/Inicio_Juego.png" };
 	virtual void dibuja();
 };
