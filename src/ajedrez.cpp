@@ -20,14 +20,17 @@ void Ajedrez::dibuja()
 		}
 	}
 
-	tablero.dibuja();
+	tablero.dibuja();  
 
 }
 void Ajedrez::detectaClick(int button, int state, int x, int y)
 {
     int altura = glutGet(GLUT_WINDOW_HEIGHT);
+
     // Verificamos si se ha hecho clic con el botón izquierdo del ratón
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) 
+    { 
+
         // Convertimos las coordenadas de la ventana a las coordenadas del mundo
         double winX = (double)x; // Coordenada x de la ventana
         double winY = (double)(altura - y); // Coordenada y de la ventana (invertida debido a la coordenada y de la ventana)
