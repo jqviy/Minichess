@@ -207,3 +207,42 @@ void Tablero::dibuja(Ajedrez& ajedrez)
     }
 
 }
+
+void Tablero::coronapeon(casilla inicio, casilla fin)
+{
+    int pieza;
+
+    cout << "Por que pieza quiere cambiar su peon: " << endl;
+    cout << "Torre(1)" << endl;
+    cout << "Reina(2)" << endl;
+    cout << "Caballo(3)" << endl;
+    cin >> pieza;
+
+    switch (pieza) {
+    case 1:
+        if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
+        {
+            celda[fin.fila][fin.columna] = new Torre(Pieza::BLANCA);
+        }
+        else  celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
+        cout << "Torre nueva" << endl;
+        break;
+    case 2:
+        if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
+        {
+            celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA);
+        }
+        else celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);
+        cout << "Reina nueva" << endl;
+        break;
+    case 3:
+        if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
+        {
+            celda[fin.fila][fin.columna] = new Caballo(Pieza::BLANCA);
+        }
+        else celda[fin.fila][fin.columna] = new Caballo(Pieza::NEGRA);
+        cout << "Caballo nuevo" << endl;
+        break;
+    }
+    celda[inicio.fila][inicio.columna] = nullptr;
+}
