@@ -45,7 +45,7 @@ void Tablero::cambiar_estado_tab(casilla inicio, casilla fin)
     }
 
     //CAMBIAR ESTADO NORMAL 
-    else
+    
         mov_estado_tab(inicio, fin);
 }
 
