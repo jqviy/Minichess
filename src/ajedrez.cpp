@@ -179,7 +179,25 @@ void Ajedrez::dibuja()
 			}
 		}
 	}
+	if(jaque_mate == 1 && turno == Pieza::NEGRA) {
+		jaquemateN.setCenter(-2.75, -8.2);
+		jaquemateN.setSize(2.64, 1.16);
+		jaquemateN.draw();
 
+	}
+
+	else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
+		jaquemateB.setCenter(-2.75, -8.2);
+		jaquemateB.setSize(2.64, 1.16);
+		jaquemateB.draw();
+
+		}
+
+		if (jaque == 1) {
+			Jaque.setCenter(-2.75, -8.2);
+			Jaque.setSize(2.64, 1.16);
+			Jaque.draw();
+		}
 	tablero.dibuja(*this);
 
 }
