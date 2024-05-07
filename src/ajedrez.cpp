@@ -64,7 +64,7 @@ void Ajedrez::Click_fin(casilla o)
 		{
 			cout << "JAQUE MATE" << endl;
 			jaque_mate = 1;
-			tablero.limpiar_Tablero();
+			//tablero.limpiar_Tablero();
 		}
 		else
 		{
