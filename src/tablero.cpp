@@ -43,9 +43,12 @@ void Tablero::cambiar_estado_tab(casilla inicio, casilla fin)
     {
         NumComidas[size_NumComidas++] = celda[fin.fila][fin.columna];
     }
+    //CORONACIÓN PEÓN
+    if ((fin.fila == 5 || fin.fila == 0) && celda[inicio.fila][inicio.columna]->getPieza() == Pieza::PEON)
+        coronapeon(inicio, fin);
 
     //CAMBIAR ESTADO NORMAL 
-    
+    else 
         mov_estado_tab(inicio, fin);
 }
 
