@@ -2,9 +2,11 @@
 #include "ETSIDI.h"
 #include "inicio.h"
 #include "ajedrez.h"
+#include "ajedrez2.h"
 
 Inicio inicio;
 Ajedrez ajedrez;
+Ajedrez2 ajedrez2;
 int start = 0;
 
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -56,6 +58,7 @@ void OnDraw(void)
 	
 	//funciones de dibujo
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
+	else if (start == 2) ajedrez2.dibuja();//4x4
 	else inicio.dibuja();
 
 	
@@ -69,15 +72,22 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	switch (key)
 	{
 		//START
-	case ' ':
+	case 'A':
 		if (start == 0)
 		{
 			start = 1;
 			stopMusica();
 		}
+	case 'B':
+		if (start == 0)
+		{
+			start = 2;
+			stopMusica();
+		}
 	default:
 		break;
 	}
+
 
 	glutPostRedisplay();
 }
