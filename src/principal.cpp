@@ -96,8 +96,19 @@ void onMouse(int button, int state, int x, int y)
 {
 	bool down = (state == GLUT_DOWN);
 	if (button == GLUT_LEFT_BUTTON)
-		ajedrez.detectaClick(x, y, button, down);
-	glutPostRedisplay();
+	{
+		if (start == 1)
+		{
+			ajedrez.detectaClick(x, y, button, down);
+			glutPostRedisplay();
+		}
+		if (start == 2)
+		{
+			ajedrez2.detectaClick(x, y, button, down);
+			glutPostRedisplay();
+		}
+	}
+		
 }
 /*
 void onMouse(int button, int state, int x, int y)

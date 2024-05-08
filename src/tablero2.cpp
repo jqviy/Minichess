@@ -108,7 +108,7 @@ void Tablero2::dibuja(Ajedrez2& ajedrez)
     int ColumnaB = -1, ColumnaN = 9, Columna = 0;
     int FilaB = NumFilas2 - 1, FilaN = NumFilas2 - 1, Fila = NumFilas2 - 1;
     int blancas = 0, negras = 0;
-    for (int i = 0; i < 22; i++) {
+    for (int i = 0; i < 16; i++) {
         if (NumComidas[i] != nullptr) {
             if (NumComidas[i]->getColor() == Pieza::BLANCA) {
                 if (blancas == NumFilas2) {
