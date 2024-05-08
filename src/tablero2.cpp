@@ -78,12 +78,12 @@ void Tablero2::dibuja(Ajedrez2& ajedrez)
     //Dibuja de un color amarillo las casillas a las que es posible mover la pieza seleccionada
     for (int i = 0; i < ajedrez.getLegalMoves(); i++)
     {
-        glColor3ub(255, 255, 0);
+        glColor3ub(87, 204, 29);
         glBegin(GL_POLYGON);
-        glVertex3d(ajedrez[i]->columna, ajedrez[i]->fila, 0.0);
-        glVertex3d(ajedrez[i]->columna + 1.0, ajedrez[i]->fila, 0.0);
-        glVertex3d(ajedrez[i]->columna + 1.0, ajedrez[i]->fila + 1.0, 0.0);
-        glVertex3d(ajedrez[i]->columna, ajedrez[i]->fila + 1.0, 0.0);
+        glVertex3d(ajedrez[i]->columna + 0.1, ajedrez[i]->fila + 0.1, 0.0);
+        glVertex3d(ajedrez[i]->columna + 0.9, ajedrez[i]->fila + 0.1, 0.0);
+        glVertex3d(ajedrez[i]->columna + 0.9, ajedrez[i]->fila + 0.9, 0.0);
+        glVertex3d(ajedrez[i]->columna + 0.1, ajedrez[i]->fila + 0.9, 0.0);
         glEnd();
         glEnable(GL_LIGHTING);
     }

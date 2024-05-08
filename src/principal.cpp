@@ -3,10 +3,12 @@
 #include "inicio.h"
 #include "ajedrez.h"
 #include "ajedrez2.h"
+#include "ajedrezbot.h"
 
 Inicio inicio;
 Ajedrez ajedrez;
 Ajedrez2 ajedrez2;
+Ajedrezbot ajedrezbot;
 int start = 0;
 
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -59,6 +61,7 @@ void OnDraw(void)
 	//funciones de dibujo
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
 	else if (start == 2) ajedrez2.dibuja();//4x4
+	else if (start == 3) ajedrezbot.dibuja();//4x4
 	else inicio.dibuja();
 
 	
@@ -78,12 +81,42 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			start = 1;
 			stopMusica();
 		}
+		break;
 	case 'B':
 		if (start == 0)
 		{
 			start = 2;
 			stopMusica();
 		}
+		break;
+	case 'a':
+		if (start == 0)
+		{
+			start = 1;
+			stopMusica();
+		}
+		break;
+	case 'b':
+		if (start == 0)
+		{
+			start = 2;
+			stopMusica();
+		}
+		break;
+	case '3':
+		if (start == 0)
+		{
+			start = 3;
+			stopMusica();
+		}
+		break;
+	case 'p':
+		if (start != 0)
+		{
+			start = 0;
+		}
+		break;
+
 	default:
 		break;
 	}

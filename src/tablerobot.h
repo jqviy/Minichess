@@ -9,8 +9,8 @@
 #define NumFilas 6
 #define NumColumnas 6
 
-class Ajedrez; 
-class Tablero
+class Ajedrezbot;
+class Tablerobot
 {
     int dimension;
     double x_ojo;
@@ -21,8 +21,8 @@ public:
     Pieza* celda[NumFilas][NumColumnas];
     Pieza* NumComidas[22];
     int size_NumComidas = 0;
-    Tablero();
-    
+    Tablerobot();
+
     Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
 
     void cambiar_estado_tab(casilla inicio, casilla fin);
@@ -30,7 +30,7 @@ public:
 
     void limpiar_Tablero();
 
-    void dibuja(Ajedrez& ajedrez);
+    void dibuja(Ajedrezbot& ajedrez);
     /*void inicializa();
     void setDimension(int dim);*/
     void coronapeon(casilla inicio, casilla fin);

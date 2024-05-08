@@ -9,6 +9,7 @@ using namespace ETSIDI;
 
 class Tablero;
 class Tablero2;
+class Tablerobot;
 class Pieza
 {	
 public:
@@ -35,6 +36,7 @@ public:
 	COLOR getColor() { return color; }
 	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero& celda);
 	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero2& celda);
+	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablerobot& celda);
 
 	virtual void dibuja() { imagen.draw(); }
 protected:

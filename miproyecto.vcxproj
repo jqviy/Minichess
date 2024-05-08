@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\ajedrez.cpp" />
     <ClCompile Include="src\ajedrez2.cpp" />
+    <ClCompile Include="src\ajedrezbot.cpp" />
     <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\casilla.cpp" />
     <ClCompile Include="src\inicio.cpp" />
@@ -31,11 +32,13 @@
     <ClCompile Include="src\Rey.cpp" />
     <ClCompile Include="src\tablero.cpp" />
     <ClCompile Include="src\tablero2.cpp" />
+    <ClCompile Include="src\tablerobot.cpp" />
     <ClCompile Include="src\Torre.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ajedrez.h" />
     <ClInclude Include="src\ajedrez2.h" />
+    <ClInclude Include="src\ajedrezbot.h" />
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\casilla.h" />
     <ClInclude Include="src\inicio.h" />
@@ -45,6 +48,7 @@
     <ClInclude Include="src\Rey.h" />
     <ClInclude Include="src\tablero.h" />
     <ClInclude Include="src\tablero2.h" />
+    <ClInclude Include="src\tablerobot.h" />
     <ClInclude Include="src\Torre.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
