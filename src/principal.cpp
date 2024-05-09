@@ -110,10 +110,16 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			stopMusica();
 		}
 		break;
-	case 'p':
+	case 27:
 		if (start != 0)
 		{
+			ajedrez.tablero.limpiar_Tablero();
+			ajedrez2.tablero.limpiar_Tablero();
+			ajedrezbot.tablero.limpiar_Tablero();
 			start = 0;
+			ajedrez = Ajedrez();
+			ajedrez2 = Ajedrez2();
+			ajedrezbot = Ajedrezbot();
 		}
 		break;
 
@@ -143,13 +149,6 @@ void onMouse(int button, int state, int x, int y)
 	}
 		
 }
-/*
-void onMouse(int button, int state, int x, int y)
-{
-	ajedrez.detectaClick(button,  state,  x,  y);
-}*/
-
-
 
 /*void OnTimer(int value)
 {

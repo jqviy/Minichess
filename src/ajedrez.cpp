@@ -162,8 +162,8 @@ void Ajedrez::vaciarMovimientos_legales()
 
 void Ajedrez::dibuja()
 {
-	gluLookAt(4, 4, 15,			    // posicion del ojo
-		4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
+	gluLookAt(3.5, 3, 12,			    // posicion del ojo
+		3.5, 3.0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			   // definimos hacia arriba (eje Y)
 
 	casilla coord;
@@ -180,68 +180,27 @@ void Ajedrez::dibuja()
 		}
 	}
 	if(jaque_mate == 1 && turno == Pieza::NEGRA) {
-		jaquemateN.setCenter(-2.75, -8.2);
+		jaquemateN.setCenter(-1.7, -6.2);
 		jaquemateN.setSize(2.64, 1.16);
 		jaquemateN.draw();
 
 	}
 
 	else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
-		jaquemateB.setCenter(-2.75, -8.2);
+		jaquemateB.setCenter(-1.7, -6.2);
 		jaquemateB.setSize(2.64, 1.16);
 		jaquemateB.draw();
 
 		}
 
 		if (jaque == 1) {
-			Jaque.setCenter(-2.75, -8.2);
+			Jaque.setCenter(-1.7, -6.2);
 			Jaque.setSize(2.64, 1.16);
 			Jaque.draw();
 		}
 	tablero.dibuja(*this);
 
 }
-/*void Ajedrez::detectaClick(int button, bool state, int x, int y)
-{
-	int altura = glutGet(GLUT_WINDOW_HEIGHT);
-	// Verificamos si se ha hecho clic con el botón izquierdo del ratón
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		// Convertimos las coordenadas de la ventana a las coordenadas del mundo
-		double winX = (double)x; // Coordenada x de la ventana
-		double winY = (double)(altura - y); // Coordenada y de la ventana (invertida debido a la coordenada y de la ventana)
-
-		// Definimos variables para almacenar las coordenadas en el mundo tridimensional
-		GLint viewport[4]; // Parámetros del viewport (x, y, ancho, alto)
-		GLdouble modelview[16], projection[16]; // Matrices de modelo y proyección
-		GLfloat winZ; // Coordenada z del punto seleccionado en el z-buffer
-		GLdouble posX, posY, posZ; // Coordenadas en el espacio tridimensional
-
-		// Obtenemos los parámetros actuales del viewport, modelo de vista y proyección
-		glGetIntegerv(GL_VIEWPORT, viewport); // Obtenemos los parámetros del viewport
-		glGetDoublev(GL_MODELVIEW_MATRIX, modelview); // Obtenemos la matriz de modelo de vista
-		glGetDoublev(GL_PROJECTION_MATRIX, projection); // Obtenemos la matriz de proyección
-
-		// Obtenemos la profundidad (z-buffer) del punto de la ventana
-		glReadPixels(x, int(winY), 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &winZ); // Leemos el z-buffer
-
-		// Convertimos las coordenadas de la ventana a las coordenadas del mundo
-		gluUnProject(winX, winY, winZ, modelview, projection, viewport, &posX, &posY, &posZ); // Convertimos las coordenadas de la ventana a las del mundo
-
-		// Convertimos las coordenadas del mundo a las coordenadas del tablero
-		int row = (int)(posY + 1); // Fila del tablero (ajustada según la coordenada y)
-		int col = (int)(posX + 1); // Columna del tablero (ajustada según la coordenada x)
-
-		// Imprimimos las coordenadas y la casilla correspondiente por pantalla
-		std::cout << "Coordenadas del raton: (" << x << ", " << y << ")" << std::endl; // Imprimimos las coordenadas del ratón
-		std::cout << "Casilla: (" << row << ", " << col << ")" << std::endl; // Imprimimos las coordenadas de la casilla del tablero
-	}
-	if (state)
-	{
-		if (casilla::fueraTablero(raton) == true) cout << "Fuera del tablero" << endl;
-		else if (click == 0) raton_sel = Click_inicio();
-		else if (click == 1) Click_fin(raton_sel);
-	}
-}*/
 
 void Ajedrez::detectaClick(int x, int y, int button, bool down)
 {

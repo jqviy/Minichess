@@ -156,8 +156,8 @@ void Ajedrez2::vaciarMovimientos_legales()
 
 void Ajedrez2::dibuja()
 {
-    gluLookAt(4, 4, 15,                // posicion del ojo
-        4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
+    gluLookAt(2, 2, 10,                // posicion del ojo
+        2.0, 2.0, 0.0,      // hacia que punto mira  (0,0,0) 
         0.0, 1.0, 0.0);               // definimos hacia arriba (eje Y)
 
     casilla coord;
@@ -175,21 +175,21 @@ void Ajedrez2::dibuja()
     }
 
     if (jaque_mate == 1 && turno == Pieza::NEGRA) {
-        jaquemateN.setCenter(-2.75, -8.2);
+        jaquemateN.setCenter(-0.8, -4.2);
         jaquemateN.setSize(2.64, 1.16);
         jaquemateN.draw();
 
     }
 
     else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
-        jaquemateB.setCenter(-2.75, -8.2);
+        jaquemateB.setCenter(-0.8, -4.2);
         jaquemateB.setSize(2.64, 1.16);
         jaquemateB.draw();
 
     }
 
     if (jaque == 1) {
-        Jaque.setCenter(-2.75, -8.2);
+        Jaque.setCenter(-0.8, -4.2);
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
     }

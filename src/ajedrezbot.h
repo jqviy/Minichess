@@ -42,5 +42,4 @@ public:
 	casilla* operator[](int pos) const { return movimientos_legales[pos]; }
 	int getLegalMoves() { return num_movimientos_legales; }
 	void dibuja();
-	void turnoIA();
 };
