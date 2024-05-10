@@ -11,7 +11,8 @@ class Ajedrez2
 {
 
 public:
-
+    int puntuacionBlancas = 0;
+    int puntuacionNegras = 0;
     Tablero2 tablero;
 
     bool turno, jaque, jaque_mate, click;

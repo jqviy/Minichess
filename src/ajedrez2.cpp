@@ -181,7 +181,7 @@ void Ajedrez2::dibuja()
         jaquemateN.setSize(2.64, 1.16);
         jaquemateN.draw();
         playMusica("sonidos/fin_juego.mp3");
-
+        puntuacionNegras += 200;
     }
 
     else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
@@ -189,14 +189,24 @@ void Ajedrez2::dibuja()
         jaquemateB.setSize(2.64, 1.16);
         jaquemateB.draw();
         playMusica("sonidos/fin_juego.mp3");
+        puntuacionBlancas += 200;
 
     }
 
-    if (jaque == 1) {
+    if (jaque == 1 && turno == Pieza::NEGRA) {
         Jaque.setCenter(-0.8, -4.2);
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
         playMusica("sonidos/jaque.mp3");
+        puntuacionNegras += 20;
+
+    }
+    else if(jaque == 1 && turno == Pieza::BLANCA) {
+        Jaque.setCenter(-0.8, -4.2);
+        Jaque.setSize(2.64, 1.16);
+        Jaque.draw();
+        playMusica("sonidos/jaque.mp3");
+        puntuacionBlancas += 20;
 
     }
     tablero.dibuja(*this);
