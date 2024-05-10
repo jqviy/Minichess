@@ -196,6 +196,8 @@ void Ajedrez2::dibuja()
         Jaque.setCenter(-0.8, -4.2);
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
+        playMusica("sonidos/jaque.mp3");
+
     }
     tablero.dibuja(*this);
 
