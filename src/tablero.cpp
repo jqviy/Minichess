@@ -109,7 +109,7 @@ void Tablero::dibuja(Ajedrez& ajedrez)
     }
 
     //Dibuja las piezas comidas
-    int ColumnaB = -1, ColumnaN = 9, Columna = 0;
+    int ColumnaB = -1, ColumnaN = 7, Columna = 0;
     int FilaB = NumFilas - 1, FilaN = NumFilas - 1, Fila = NumFilas - 1;
     int blancas = 0, negras = 0;
     for (int i = 0; i < 22; i++) {
