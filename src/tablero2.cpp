@@ -105,7 +105,7 @@ void Tablero2::dibuja(Ajedrez2& ajedrez)
         }
     }
     //Dibuja las piezas comidas
-    int ColumnaB = -1, ColumnaN = 9, Columna = 0;
+    int ColumnaB = -1, ColumnaN = 5, Columna = 0;
     int FilaB = NumFilas2 - 1, FilaN = NumFilas2 - 1, Fila = NumFilas2 - 1;
     int blancas = 0, negras = 0;
     for (int i = 0; i < 16; i++) {
