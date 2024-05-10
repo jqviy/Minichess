@@ -202,7 +202,7 @@ void Ajedrez2::dibuja()
     //Dibuja fonde de pantalla
 
     fondo2.setCenter(3.6, 1.45);
-    fondo2.setCenter(14.9, 11.175);
+    fondo2.setSize(14.9, 11.175);
     fondo2.draw();
 
 
