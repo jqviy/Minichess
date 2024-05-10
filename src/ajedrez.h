@@ -20,6 +20,7 @@ public:
 	int num_movimientos_legales;
 	casilla raton, raton_sel;
 	Sprite jaquemateB{ "imagenes/jaquemateB.png" }, jaquemateN{ "imagenes/jaquemateN.png" }, Jaque{ "imagenes/jaque.png" };
+	Sprite fondo1{ "imagenes/fondo1.png" };
 
 public:
 	Ajedrez() : turno(0), jaque(0), jaque_mate(0), click(0), num_movimientos_legales(0)

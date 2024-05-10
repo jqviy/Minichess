@@ -50,8 +50,10 @@ void Ajedrez2::Click_fin(casilla o)
         if (tablero[seg] != nullptr)
         {
             cout << "Pieza comida " << endl;
-
+            playMusica("sonidos/comer.mp3");
         }
+        
+        playMusica("sonidos/mover");
 
         //Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero
         //o.print() << "->";
@@ -178,6 +180,7 @@ void Ajedrez2::dibuja()
         jaquemateN.setCenter(-0.8, -4.2);
         jaquemateN.setSize(2.64, 1.16);
         jaquemateN.draw();
+        playMusica("sonidos/fin_juego.mp3");
 
     }
 
@@ -185,6 +188,7 @@ void Ajedrez2::dibuja()
         jaquemateB.setCenter(-0.8, -4.2);
         jaquemateB.setSize(2.64, 1.16);
         jaquemateB.draw();
+        playMusica("sonidos/fin_juego.mp3");
 
     }
 
@@ -194,6 +198,13 @@ void Ajedrez2::dibuja()
         Jaque.draw();
     }
     tablero.dibuja(*this);
+
+    //Dibuja fonde de pantalla
+
+    fondo2.setCenter(3.6, 1.45);
+    fondo2.setCenter(14.9, 11.175);
+    fondo2.draw();
+
 
 }
 void Ajedrez2::detectaClick(int x, int y, int button, bool down)
