@@ -6,6 +6,7 @@
 #include "ajedrezbot.h"
 
 Inicio inicio;
+Inicio final;
 Ajedrez ajedrez;
 Ajedrez2 ajedrez2;
 Ajedrezbot ajedrezbot;
@@ -62,7 +63,8 @@ void OnDraw(void)
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
 	else if (start == 2) ajedrez2.dibuja();//4x4
 	else if (start == 3) ajedrezbot.dibuja();//4x4
-	else inicio.dibuja();
+	else if (start == 4) final.dibuja_final();//dibuja pantalla fin partida
+	else inicio.dibuja_portada();
 
 	
 
@@ -137,9 +139,20 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	default:
 		break;
+
+	case 'F':
+		if (start == 1 || start == 2)
+		{
+			start = 4;
+		}
+		break;
+	case 'f':
+		if (start == 1 || start == 2)
+		{
+			start = 4;
+		}
+		break;
 	}
-
-
 	glutPostRedisplay();
 }
 
