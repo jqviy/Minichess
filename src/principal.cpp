@@ -122,6 +122,18 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			ajedrezbot = Ajedrezbot();
 		}
 		break;
+	case 'P':
+		if (start != 0)
+		{
+			start = 0;
+		}
+		break;
+	case 'p':
+		if (start != 0)
+		{
+			start = 0;
+		}
+		break;
 
 	default:
 		break;
