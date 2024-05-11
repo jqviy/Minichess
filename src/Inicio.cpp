@@ -1,7 +1,7 @@
 #include "Inicio.h"
 
 //Dibujo y musica de la pantalla de Inicio 
-void Inicio::dibuja()
+void Inicio::dibuja_portada()
 {
 	gluLookAt(4, 4, 15,				// posicion del ojo
 		4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
@@ -13,4 +13,15 @@ void Inicio::dibuja()
 	portada.draw();
 
 }
+void Inicio::dibuja_final()
+{
+	gluLookAt(4, 4, 15,				// posicion del ojo
+		4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
+		0.0, 1.0, 0.0);			   // definimos hacia arriba (eje Y)
 
+	playMusica("sonidos/musica_inicio.mp3", true);
+	final.setCenter(3.6, 1.45);
+	final.setSize(14.9, 11.175);
+	final.draw();
+
+}
