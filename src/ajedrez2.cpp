@@ -179,6 +179,9 @@ void Ajedrez2::dibuja()
         jaquemateN.setCenter(-0.8, -4.2);
         jaquemateN.setSize(2.64, 1.16);
         jaquemateN.draw();
+        Instru.setCenter(0.5, 1.3);
+        Instru.setSize(5, 1.16);
+        Instru.draw();
         playMusica("sonidos/fin_juego.mp3");
         puntuacionNegras += 200;
     }
@@ -187,6 +190,9 @@ void Ajedrez2::dibuja()
         jaquemateB.setCenter(-0.8, -4.2);
         jaquemateB.setSize(2.64, 1.16);
         jaquemateB.draw();
+        Instru.setCenter(0.5, 1.3);
+        Instru.setSize(5, 1.16);
+        Instru.draw();
         playMusica("sonidos/fin_juego.mp3");
         puntuacionBlancas += 200;
 

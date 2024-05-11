@@ -20,7 +20,7 @@ public:
 	casilla* movimientos_legales[MAX_MOVES];
 	int num_movimientos_legales;
 	casilla raton, raton_sel;
-	Sprite jaquemateB{ "imagenes/jaquemateB.png" }, jaquemateN{ "imagenes/jaquemateN.png" }, Jaque{ "imagenes/jaque.png" };
+	Sprite jaquemateB{ "imagenes/jaquemateB.png" }, jaquemateN{ "imagenes/jaquemateN.png" }, Jaque{ "imagenes/jaque.png" }, Instru{"imagenes/instru.png"};
 	Sprite fondo1{ "imagenes/fondo1.png" };
 
 public:
