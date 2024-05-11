@@ -33,7 +33,7 @@ public:
     void Click_fin(casilla o);
     ;
 
-    //void detectaClick(int button, bool state, int x, int y);
+   
     void detectaClick(int x, int y, int button, bool down);
     void cambio_turno() { turno = !turno; }
 
