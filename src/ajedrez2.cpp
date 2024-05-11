@@ -52,8 +52,7 @@ void Ajedrez2::Click_fin(casilla o)
             cout << "Pieza comida " << endl;
             playMusica("sonidos/comer.mp3");
         }
-        
-        playMusica("sonidos/mover.mp3");
+        else playMusica("sonidos/mover.mp3");
 
         //Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero
         //o.print() << "->";
