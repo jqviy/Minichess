@@ -19,7 +19,7 @@ void Inicio::dibuja_final()
 		4.0, 4.0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);			   // definimos hacia arriba (eje Y)
 
-	playMusica("sonidos/musica_inicio.mp3", true);
+	playMusica("sonidos/fin_partida.mp3", true);
 	final.setCenter(3.6, 1.45);
 	final.setSize(14.9, 11.175);
 	final.draw();
