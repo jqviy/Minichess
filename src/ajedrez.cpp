@@ -55,10 +55,7 @@ void Ajedrez::Click_fin(casilla o)
 
 		}
 		else playMusica("sonidos/mover.mp3");
-
-		//Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero
-		//o.print() << "->";
-		//seg.print() << endl;
+	
 		tablero.cambiar_estado_tab(o, seg);
 
 		//Comprobaciones y acciones que se realizan al cambiar el estado de tablero
@@ -66,7 +63,7 @@ void Ajedrez::Click_fin(casilla o)
 		{
 			cout << "JAQUE MATE" << endl;
 			jaque_mate = 1;
-			//tablero.limpiar_Tablero();
+			
 		}
 		else
 		{
