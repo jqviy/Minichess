@@ -14,7 +14,6 @@ int start = 0;
 
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
-//void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla
 void onMouse(int button, int state, int x, int y); // Declaración de onMouse()
 
@@ -175,12 +174,5 @@ void onMouse(int button, int state, int x, int y)
 		
 }
 
-/*void OnTimer(int value)
-{
-//poner aqui el código de animacion
-// 
-	//no borrar estas lineas
-	glutTimerFunc(25,OnTimer,0);
-	glutPostRedisplay();
-}*/
+
 
