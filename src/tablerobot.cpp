@@ -150,6 +150,13 @@ void Tablerobot::coronapeon(casilla inicio, casilla fin)
     cout << "Caballo(3)" << endl;
     cin >> pieza;
 
+    /* if (turno == Pieza::BLANCA) {
+        puntuacionBlancas += 15;
+    }
+    else if (turno == Pieza::NEGRA) {
+        puntuacionNegras += 15;
+    }*/
+
     switch (pieza) {
     case 1:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
