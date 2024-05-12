@@ -21,7 +21,7 @@ public:
     casilla* movimientos_legales[MAX_MOVES];
     int num_movimientos_legales;
     casilla raton, raton_sel;
-    Sprite jaquemateB{ "imagenes/jaquemateB.png" }, jaquemateN{ "imagenes/jaquemateN.png" }, Jaque{ "imagenes/jaque.png" };
+    Sprite jaquemateB{ "imagenes/jaquemateB.png" }, jaquemateN{ "imagenes/jaquemateN.png" }, Jaque{ "imagenes/jaque.png" }, Instru{ "imagenes/instru.png" };
     Sprite fondo2{ "imagenes/fondo2.png" };
 
 public:
@@ -34,7 +34,7 @@ public:
     void Click_fin(casilla o);
     ;
 
-    //void detectaClick(int button, bool state, int x, int y);
+   
     void detectaClick(int x, int y, int button, bool down);
     void cambio_turno() { turno = !turno; }
 

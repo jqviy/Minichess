@@ -31,7 +31,6 @@ public:
     void limpiar_Tablero();
 
     void dibuja(Ajedrez& ajedrez);
-    /*void inicializa();
-    void setDimension(int dim);*/
+    
     void coronapeon(casilla inicio, casilla fin);
 };

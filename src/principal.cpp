@@ -6,6 +6,7 @@
 #include "ajedrezbot.h"
 
 Inicio inicio;
+Inicio final;
 Ajedrez ajedrez;
 Ajedrez2 ajedrez2;
 Ajedrezbot ajedrezbot;
@@ -13,7 +14,6 @@ int start = 0;
 
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
-//void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla
 void onMouse(int button, int state, int x, int y); // Declaración de onMouse()
 
@@ -62,7 +62,8 @@ void OnDraw(void)
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
 	else if (start == 2) ajedrez2.dibuja();//4x4
 	else if (start == 3) ajedrezbot.dibuja();//4x4
-	else inicio.dibuja();
+	else if (start == 4) final.dibuja_final();//dibuja pantalla fin partida
+	else inicio.dibuja_portada();
 
 	
 
@@ -122,12 +123,35 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			ajedrezbot = Ajedrezbot();
 		}
 		break;
+	case 'P':
+		if (start != 0)
+		{
+			start = 0;
+		}
+		break;
+	case 'p':
+		if (start != 0)
+		{
+			start = 0;
+		}
+		break;
 
 	default:
 		break;
+
+	case 'F':
+		if (start == 1 || start == 2)
+		{
+			start = 4;
+		}
+		break;
+	case 'f':
+		if (start == 1 || start == 2)
+		{
+			start = 4;
+		}
+		break;
 	}
-
-
 	glutPostRedisplay();
 }
 
@@ -150,12 +174,5 @@ void onMouse(int button, int state, int x, int y)
 		
 }
 
-/*void OnTimer(int value)
-{
-//poner aqui el código de animacion
-// 
-	//no borrar estas lineas
-	glutTimerFunc(25,OnTimer,0);
-	glutPostRedisplay();
-}*/
+
 

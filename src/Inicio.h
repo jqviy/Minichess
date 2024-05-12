@@ -18,5 +18,7 @@ class Inicio
 {
 public:
 	Sprite portada{ "imagenes/Inicio_Juego.png" };
-	virtual void dibuja();
+	Sprite final{ "imagenes/pantalla_final.png" };
+	virtual void dibuja_portada();
+	virtual void dibuja_final();
 };
