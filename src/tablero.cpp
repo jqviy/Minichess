@@ -173,18 +173,22 @@ void Tablero::coronapeon(casilla inicio, casilla fin, Ajedrez& a)
     case 2:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
-            celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA); //a.puntuacionBlancas += 15;
+            celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA); 
+            //a.puntuacionBlancas += 15;
         }
-        else { celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA); //a.puntuacionNegras += 15; 
+        else { celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA); 
+            //a.puntuacionNegras += 15; 
         }
         cout << "Reina nueva" << endl;
         break;
     case 3:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
-            celda[fin.fila][fin.columna] = new Caballo(Pieza::BLANCA); //a.puntuacionBlancas += 15;
+            celda[fin.fila][fin.columna] = new Caballo(Pieza::BLANCA); 
+            //a.puntuacionBlancas += 15;
         }
-        else { celda[fin.fila][fin.columna] = new Caballo(Pieza::NEGRA);//a.puntuacionNegras += 15; 
+        else { celda[fin.fila][fin.columna] = new Caballo(Pieza::NEGRA);
+            //a.puntuacionNegras += 15; 
         }
         cout << "Caballo nuevo" << endl;
         break;

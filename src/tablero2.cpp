@@ -159,8 +159,10 @@ void Tablero2::coronapeon(casilla inicio, casilla fin, Ajedrez2& a)
             celda[fin.fila][fin.columna] = new Torre(Pieza::BLANCA);
             //a.puntuacionBlancas += 15;
         }
-        else  celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
+        else {
+            celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
             //a.puntuacionNegras += 15;
+        }
         cout << "Torre nueva" << endl;
         break;
     case 2:
@@ -169,7 +171,10 @@ void Tablero2::coronapeon(casilla inicio, casilla fin, Ajedrez2& a)
             celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA);
             //a.puntuacionBlancas += 15;
         }
-        else celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);//a.puntuacionNegras += 15;
+        else {
+            celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);
+            //a.puntuacionNegras += 15;
+        }
         cout << "Reina nueva" << endl;
         break;
     }

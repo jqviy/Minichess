@@ -25,7 +25,7 @@ public:
 
     Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
 
-    void cambiar_estado_tab(casilla inicio, casilla fin);
+    void cambiar_estado_tab(casilla inicio, casilla fin, Ajedrezbot& a);
     void mov_estado_tab(casilla inicio, casilla fin);
 
     void limpiar_Tablero();
@@ -33,5 +33,5 @@ public:
     void dibuja(Ajedrezbot& ajedrez);
     /*void inicializa();
     void setDimension(int dim);*/
-    void coronapeon(casilla inicio, casilla fin);
+    void coronapeon(casilla inicio, casilla fin, Ajedrezbot& a);
 };

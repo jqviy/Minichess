@@ -35,6 +35,7 @@ casilla Ajedrezbot::Click_inicio()
 
 void Ajedrezbot::Click_fin(casilla o)
 {
+	Ajedrezbot a;
 	casilla seg = raton;
 	bool encontrar = false;
 
@@ -65,21 +66,34 @@ void Ajedrezbot::Click_fin(casilla o)
 		//Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero
 		//o.print() << "->";
 		//seg.print() << endl;
-		tablero.cambiar_estado_tab(o, seg);
+		tablero.cambiar_estado_tab(o, seg,a);
 
 		//Comprobaciones y acciones que se realizan al cambiar el estado de tablero
 		if (compruebaJaqueMate((Pieza::COLOR)!turno))
 		{
+			jaque_mate = 1;
+			if (turno == Pieza::BLANCA) {
+				puntuacionBlancas += 200;
+			}
+			else if (turno == Pieza::NEGRA) {
+				puntuacionNegras += 200;
+			}
 			cout << "JAQUE MATE" << endl;
 			cout << "La puntuacion de las blancas es: " << puntuacionBlancas << endl;
 			cout << "La puntuacion de las negras es: " << puntuacionNegras << endl;
-			jaque_mate = 1;
+			
 			//tablero.limpiar_Tablero();
 		}
 		else
 		{
 			jaque = compruebaJaque(tablero, (Pieza::COLOR)!turno);
 			if (jaque == 1) cout << "JAQUE" << endl;
+			if (jaque == 1 && turno == Pieza::BLANCA) {
+				puntuacionBlancas += 20;
+			}
+			else if (jaque == 1 && turno == Pieza::NEGRA) {
+				puntuacionNegras += 20;
+			}
 			vaciarMovimientos_legales();
 			cambio_turno();
 			click = 0;
@@ -194,7 +208,7 @@ void Ajedrezbot::dibuja()
 		jaquemateN.setSize(2.64, 1.16);
 		jaquemateN.draw();
 		playMusica("sonidos/fin_juego.mp3");
-		puntuacionNegras += 200;
+		//puntuacionNegras += 200;
 	}
 
 	else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
@@ -202,7 +216,7 @@ void Ajedrezbot::dibuja()
 		jaquemateB.setSize(2.64, 1.16);
 		jaquemateB.draw();
 		playMusica("sonidos/fin_juego.mp3");
-		puntuacionBlancas += 200;
+		//puntuacionBlancas += 200;
 
 	}
 
@@ -211,7 +225,7 @@ void Ajedrezbot::dibuja()
 		Jaque.setSize(2.64, 1.16);
 		Jaque.draw();
 		playMusica("sonidos/jaque.mp3");
-		puntuacionNegras += 20;
+		//puntuacionNegras += 20;
 	}
 
 	if (jaque == 1 && turno == Pieza::BLANCA) {
@@ -219,7 +233,7 @@ void Ajedrezbot::dibuja()
 		Jaque.setSize(2.64, 1.16);
 		Jaque.draw();
 		playMusica("sonidos/jaque.mp3");
-		puntuacionBlancas += 20;
+		//puntuacionBlancas += 20;
 
 	}
 
