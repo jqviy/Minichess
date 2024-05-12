@@ -216,7 +216,7 @@ void Ajedrez2::dibuja()
     fondo2.setCenter(3.6, 1.45);
     fondo2.setSize(14.9, 11.175);
     fondo2.draw();
-
+    
 
 }
 void Ajedrez2::detectaClick(int x, int y, int button, bool down)

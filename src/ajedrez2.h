@@ -11,10 +11,11 @@ class Ajedrez2
 {
 
 public:
-    int puntuacionBlancas = 0;
-    int puntuacionNegras = 0;
+    
     Tablero2 tablero;
 
+    int puntuacionBlancas = 0;
+    int puntuacionNegras = 0;
     bool turno, jaque, jaque_mate, click;
 
     casilla* movimientos_legales[MAX_MOVES];

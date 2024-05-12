@@ -13,6 +13,7 @@ class Ajedrez
 public:
 
 	Tablero tablero;
+
 	int puntuacionBlancas=0;
 	int puntuacionNegras=0;
 	bool turno, jaque, jaque_mate, click;
