@@ -50,6 +50,12 @@ void Ajedrez2::Click_fin(casilla o)
         if (tablero[seg] != nullptr)
         {
             cout << "Pieza comida " << endl;
+            if (turno == Pieza::BLANCA) {
+                puntuacionBlancas += 50;
+            }
+            else if (turno == Pieza::NEGRA) {
+                puntuacionNegras += 50;
+            }
             playMusica("sonidos/comer.mp3");
         }
         else playMusica("sonidos/mover.mp3");
@@ -60,6 +66,8 @@ void Ajedrez2::Click_fin(casilla o)
         if (compruebaJaqueMate((Pieza::COLOR)!turno))
         {
             cout << "JAQUE MATE" << endl;
+            cout << "La puntuacion de las blancas es: " << puntuacionBlancas << endl;
+            cout << "La puntuacion de las negras es: " << puntuacionNegras << endl;
             jaque_mate = 1;
         
         }
