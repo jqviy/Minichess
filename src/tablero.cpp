@@ -36,7 +36,7 @@ Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
 }
 
 //Metodo encargado del movimiento de las piezas del tablero
-void Tablero::cambiar_estado_tab(casilla inicio, casilla fin)
+void Tablero::cambiar_estado_tab(casilla inicio, casilla fin, Ajedrez& a)
 {
     //PIEZAS COMIDAS
     if (celda[fin.fila][fin.columna] != nullptr)
@@ -45,7 +45,7 @@ void Tablero::cambiar_estado_tab(casilla inicio, casilla fin)
     }
     //CORONACIÓN PEÓN
     if ((fin.fila == 5 || fin.fila == 0) && celda[inicio.fila][inicio.columna]->getPieza() == Pieza::PEON)
-        coronapeon(inicio, fin);
+        coronapeon(inicio, fin,a);
 
     //CAMBIAR ESTADO NORMAL 
     else 
@@ -140,7 +140,7 @@ void Tablero::dibuja(Ajedrez& ajedrez)
 
 }
 
-void Tablero::coronapeon(casilla inicio, casilla fin)
+void Tablero::coronapeon(casilla inicio, casilla fin, Ajedrez& a)
 {
     int pieza;
 
@@ -150,11 +150,11 @@ void Tablero::coronapeon(casilla inicio, casilla fin)
     cout << "Caballo(3)" << endl;
     cin >> pieza;
 
-   /* if (turno == Pieza::BLANCA) {
-        puntuacionBlancas += 15;
+   /*if (a.turno == Pieza::BLANCA) {
+        a.puntuacionBlancas += 15;
     }
-    else if (turno == Pieza::NEGRA) {
-        puntuacionNegras += 15;
+    else if (a.turno == Pieza::NEGRA) {
+        a.puntuacionNegras += 15;
     }*/
 
     switch (pieza) {
@@ -162,24 +162,30 @@ void Tablero::coronapeon(casilla inicio, casilla fin)
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
             celda[fin.fila][fin.columna] = new Torre(Pieza::BLANCA);
+            //a.puntuacionBlancas += 15;
         }
-        else  celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
+        else {
+            celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
+            //a.puntuacionNegras += 15;
+        }
         cout << "Torre nueva" << endl;
         break;
     case 2:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
-            celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA);
+            celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA); //a.puntuacionBlancas += 15;
         }
-        else celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);
+        else { celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA); //a.puntuacionNegras += 15; 
+        }
         cout << "Reina nueva" << endl;
         break;
     case 3:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
-            celda[fin.fila][fin.columna] = new Caballo(Pieza::BLANCA);
+            celda[fin.fila][fin.columna] = new Caballo(Pieza::BLANCA); //a.puntuacionBlancas += 15;
         }
-        else celda[fin.fila][fin.columna] = new Caballo(Pieza::NEGRA);
+        else { celda[fin.fila][fin.columna] = new Caballo(Pieza::NEGRA);//a.puntuacionNegras += 15; 
+        }
         cout << "Caballo nuevo" << endl;
         break;
     }
