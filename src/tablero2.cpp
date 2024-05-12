@@ -35,7 +35,7 @@ Tablero2::Tablero2() : dimension(4), x_ojo(0), y_ojo(0), z_ojo(20)
 }
 
 //Metodo encargado del movimiento de las piezas del tablero
-void Tablero2::cambiar_estado_tab(casilla inicio, casilla fin)
+void Tablero2::cambiar_estado_tab(casilla inicio, casilla fin, Ajedrez2& a)
 {
     //PIEZAS COMIDAS
     if (celda[fin.fila][fin.columna] != nullptr)
@@ -44,7 +44,7 @@ void Tablero2::cambiar_estado_tab(casilla inicio, casilla fin)
     }
     //CORONACIÓN PEÓN
     if ((fin.fila == 3 || fin.fila == 0) && celda[inicio.fila][inicio.columna]->getPieza() == Pieza::PEON)
-        coronapeon(inicio, fin);
+        coronapeon(inicio, fin,a);
 
     //CAMBIAR ESTADO NORMAL 
     else
@@ -136,7 +136,7 @@ void Tablero2::dibuja(Ajedrez2& ajedrez)
 
 }
 
-void Tablero2::coronapeon(casilla inicio, casilla fin)
+void Tablero2::coronapeon(casilla inicio, casilla fin, Ajedrez2& a)
 {
     int pieza;
 
@@ -145,28 +145,31 @@ void Tablero2::coronapeon(casilla inicio, casilla fin)
     cout << "Reina(2)" << endl;
     cin >> pieza;
 
-    /* if (turno == Pieza::BLANCA) {
-        puntuacionBlancas += 15;
-    }
-    else if (turno == Pieza::NEGRA) {
-        puntuacionNegras += 15;
-    }*/
+    /*if (a.turno == Pieza::BLANCA) {
+         a.puntuacionBlancas += 15;
+     }
+     else if (a.turno == Pieza::NEGRA) {
+         a.puntuacionNegras += 15;
+     }*/
 
     switch (pieza) {
     case 1:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
             celda[fin.fila][fin.columna] = new Torre(Pieza::BLANCA);
+            //a.puntuacionBlancas += 15;
         }
         else  celda[fin.fila][fin.columna] = new Torre(Pieza::NEGRA);
+            //a.puntuacionNegras += 15;
         cout << "Torre nueva" << endl;
         break;
     case 2:
         if (celda[inicio.fila][inicio.columna]->getColor() == Pieza::BLANCA)
         {
             celda[fin.fila][fin.columna] = new Reina(Pieza::BLANCA);
+            //a.puntuacionBlancas += 15;
         }
-        else celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);
+        else celda[fin.fila][fin.columna] = new Reina(Pieza::NEGRA);//a.puntuacionNegras += 15;
         cout << "Reina nueva" << endl;
         break;
     }

@@ -24,12 +24,12 @@ public:
 
     Pieza* operator[](casilla pos) const { return celda[pos.fila][pos.columna]; }
 
-    void cambiar_estado_tab(casilla inicio, casilla fin);
+    void cambiar_estado_tab(casilla inicio, casilla fin, Ajedrez2& a);
     void mov_estado_tab(casilla inicio, casilla fin);
 
     void limpiar_Tablero();
 
     void dibuja(Ajedrez2& ajedrez);
   
-        void coronapeon(casilla inicio, casilla fin);
+        void coronapeon(casilla inicio, casilla fin, Ajedrez2& a);
 };
