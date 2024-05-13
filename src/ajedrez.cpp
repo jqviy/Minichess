@@ -204,7 +204,7 @@ void Ajedrez::dibuja()
 		Instru.setCenter(0, 1.3);
 		Instru.setSize(6, 1.16);
 		Instru.draw();
-		playMusica("sonidos/fin_juego.mp3");
+		playMusica("sonidos/fin_juegoN.mp3");
 		//puntuacionNegras += 200;
 	}
 
