@@ -79,7 +79,7 @@ void Tablero::limpiar_Tablero()
 void Tablero::dibuja(Ajedrez& ajedrez)
 {
     //Dibuja de un color verde las casillas a las que es posible mover la pieza seleccionada
-    for (int i = 0; i < ajedrez.getLegalMoves(); i++)
+    for (int i = 0; i < ajedrez.getMovimientos_legales(); i++)
     {
         glColor3ub(87, 204, 29);
         glBegin(GL_POLYGON);
