@@ -45,7 +45,7 @@ public:
     void vaciarMovimientos_legales();
 
     casilla* operator[](int pos) const { return movimientos_legales[pos]; }
-    int getLegalMoves() { return num_movimientos_legales; }
+    int getMovimientos_legales() { return num_movimientos_legales; }
     void dibuja();
 
 };
