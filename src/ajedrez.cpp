@@ -35,7 +35,6 @@ casilla Ajedrez::Click_inicio()
 
 void Ajedrez::Click_fin(casilla o)
 {
-	Ajedrez a;
 	casilla seg = raton;
 	bool encontrar = false;
 
@@ -63,7 +62,7 @@ void Ajedrez::Click_fin(casilla o)
 		}
 		else playMusica("sonidos/mover.mp3");
 	
-		tablero.cambiar_estado_tab(o, seg, a);
+		tablero.cambiar_estado_tab(o, seg, *this);
 
 		//Comprobaciones y acciones que se realizan al cambiar el estado de tablero
 		if (compruebaJaqueMate((Pieza::COLOR)!turno))
