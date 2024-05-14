@@ -25,9 +25,11 @@
     <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\casilla.cpp" />
     <ClCompile Include="src\inicio.cpp" />
+    <ClCompile Include="src\jugador.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\principal.cpp" />
+    <ClCompile Include="src\ranking.cpp" />
     <ClCompile Include="src\Reina.cpp" />
     <ClCompile Include="src\Rey.cpp" />
     <ClCompile Include="src\tablero.cpp" />
@@ -42,8 +44,10 @@
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\casilla.h" />
     <ClInclude Include="src\inicio.h" />
+    <ClInclude Include="src\jugador.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
+    <ClInclude Include="src\ranking.h" />
     <ClInclude Include="src\Reina.h" />
     <ClInclude Include="src\Rey.h" />
     <ClInclude Include="src\tablero.h" />
