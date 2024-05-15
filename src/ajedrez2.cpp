@@ -57,9 +57,9 @@ void Ajedrez2::Click_fin(casilla o)
             else if (turno == Pieza::NEGRA) {
                 puntuacionNegras += 50;
             }
-            playMusica("sonidos/comer.mp3");
+            playMusica("sonidos/comer2.mp3");
         }
-        else playMusica("sonidos/mover.mp3");
+        else playMusica("sonidos/mover2.mp3");
 
         tablero.cambiar_estado_tab(o, seg, a);
 
@@ -201,7 +201,7 @@ void Ajedrez2::dibuja()
         Instru.setCenter(0.5, 1.3);
         Instru.setSize(5, 1.16);
         Instru.draw();
-        playMusica("sonidos/fin_juego.mp3");
+        playMusica("sonidos/fin_juegoN2.mp3");
         //puntuacionNegras += 200;
     }
 
@@ -212,7 +212,7 @@ void Ajedrez2::dibuja()
         Instru.setCenter(0.5, 1.3);
         Instru.setSize(5, 1.16);
         Instru.draw();
-        playMusica("sonidos/fin_juego.mp3");
+        playMusica("sonidos/fin_juego2.mp3");
         //puntuacionBlancas += 200;
 
     }
@@ -221,7 +221,7 @@ void Ajedrez2::dibuja()
         Jaque.setCenter(-0.8, -4.2);
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
-        playMusica("sonidos/jaque.mp3");
+        playMusica("sonidos/jaque2.mp3");
         //puntuacionNegras += 20;
 
     }
@@ -229,7 +229,7 @@ void Ajedrez2::dibuja()
         Jaque.setCenter(-0.8, -4.2);
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
-        playMusica("sonidos/jaque.mp3");
+        playMusica("sonidos/jaque2.mp3");
         //puntuacionBlancas += 20;
 
     }
