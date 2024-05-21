@@ -66,7 +66,10 @@ void OnDraw(void)
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
 	else if (start == 2) ajedrez2.dibuja();//4x4
 	else if (start == 3) ajedrezbot.dibuja();//4x4
-	else if (start == 4) { final.dibuja_final(); cout << endl << "PULSE LA TECLA ESCAPE PARA ABANDONAR EL JUEGO" << endl; }//dibuja pantalla fin partida
+	else if (start == 4) 
+	{ final.dibuja_final(); //dibuja pantalla fin partida
+	cout << endl << "PULSE LA TECLA ESCAPE PARA ABANDONAR EL JUEGO" << endl; 
+	}
 	else inicio.dibuja_portada();
 
 	
