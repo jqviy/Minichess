@@ -5,6 +5,9 @@
 #include "ajedrez2.h"
 #include "ajedrezbot.h"
 #include <cstdlib>
+#include <stdlib.h>
+
+using namespace std;
 
 Inicio inicio;
 Inicio final;
@@ -63,7 +66,7 @@ void OnDraw(void)
 	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
 	else if (start == 2) ajedrez2.dibuja();//4x4
 	else if (start == 3) ajedrezbot.dibuja();//4x4
-	else if (start == 4) final.dibuja_final();//dibuja pantalla fin partida
+	else if (start == 4) { final.dibuja_final(); cout << endl << "PULSE LA TECLA ESCAPE PARA ABANDONAR EL JUEGO" << endl; }//dibuja pantalla fin partida
 	else inicio.dibuja_portada();
 
 	
@@ -125,6 +128,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 		}
 		if (start == 4)
 		{
+			
 			exit(0);
 		}
 		break;
