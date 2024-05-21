@@ -4,6 +4,7 @@
 #include "ajedrez.h"
 #include "ajedrez2.h"
 #include "ajedrezbot.h"
+#include <cstdlib>
 
 Inicio inicio;
 Inicio final;
@@ -112,7 +113,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 		}
 		break;
 	case 27:
-		if (start != 0)
+		if (start != 0 && start != 4)
 		{
 			ajedrez.tablero.limpiar_Tablero();
 			ajedrez2.tablero.limpiar_Tablero();
@@ -122,15 +123,19 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			ajedrez2 = Ajedrez2();
 			ajedrezbot = Ajedrezbot();
 		}
+		if (start == 4)
+		{
+			exit(0);
+		}
 		break;
 	case 'P':
-		if (start != 0)
+		if (start != 0 && start != 4)
 		{
 			start = 0;
 		}
 		break;
 	case 'p':
-		if (start != 0)
+		if (start != 0 && start != 4)
 		{
 			start = 0;
 		}
