@@ -66,7 +66,7 @@ void Ajedrezbot::Click_fin(casilla o)
 		//Se imprime en consola el movimiento realizado y se le pasa la información del nuevo estado al tablero
 		//o.print() << "->";
 		//seg.print() << endl;
-		tablero.cambiar_estado_tab(o, seg,a);
+		tablero.cambiar_estado_tab(o, seg,*this);
 
 		//Comprobaciones y acciones que se realizan al cambiar el estado de tablero
 		if (compruebaJaqueMate((Pieza::COLOR)!turno))

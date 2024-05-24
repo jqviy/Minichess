@@ -150,12 +150,7 @@ void Tablerobot::coronapeon(casilla inicio, casilla fin, Ajedrezbot& a)
     cout << "Caballo(3)" << endl;
     cin >> pieza;
 
-    /* if (a.turno == Pieza::BLANCA) {
-        a.puntuacionBlancas += 15;
-    }
-    else if (a.turno == Pieza::NEGRA) {
-        a.puntuacionNegras += 15;
-    }*/
+
 
     switch (pieza) {
     case 1:
@@ -196,4 +191,12 @@ void Tablerobot::coronapeon(casilla inicio, casilla fin, Ajedrezbot& a)
         break;
     }
     celda[inicio.fila][inicio.columna] = nullptr;
+
+    if (a.turno == Pieza::BLANCA) {
+        a.puntuacionBlancas += 15;
+    }
+    else if (a.turno == Pieza::NEGRA) {
+        a.puntuacionNegras += 15;
+    }
+
 }
