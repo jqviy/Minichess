@@ -217,22 +217,22 @@ void Ajedrez::dibuja()
 		Instru.draw();
 		playMusica("sonidos/fin_juego.mp3");
 		//puntuacionBlancas += 200;
-		}
+	}
 
-		if (jaque == 1 && turno==Pieza::NEGRA) {
-			Jaque.setCenter(-1.7, -6.2);
-			Jaque.setSize(2.64, 1.16);
-			Jaque.draw();
-			playMusica("sonidos/jaque.mp3");
-			//puntuacionNegras += 20;
-		}
-		else if(jaque == 1 && turno==Pieza::BLANCA) {
-			Jaque.setCenter(-1.7, -6.2);
-			Jaque.setSize(2.64, 1.16);
-			Jaque.draw();
-			playMusica("sonidos/jaque.mp3");
-			//puntuacionBlancas += 20;
-		}
+	if (jaque == 1 && turno == Pieza::NEGRA) {
+		Jaque.setCenter(-1.7, -6.2);
+		Jaque.setSize(2.64, 1.16);
+		Jaque.draw();
+		playMusica("sonidos/jaque.mp3");
+		//puntuacionNegras += 20;
+	}
+	else if (jaque == 1 && turno == Pieza::BLANCA) {
+		Jaque.setCenter(-1.7, -6.2);
+		Jaque.setSize(2.64, 1.16);
+		Jaque.draw();
+		playMusica("sonidos/jaque.mp3");
+		//puntuacionBlancas += 20;
+	}
 	tablero.dibuja(*this);
 
 	//Dibuja fonde de pantalla
