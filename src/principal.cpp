@@ -3,7 +3,6 @@
 #include "inicio.h"
 #include "ajedrez.h"
 #include "ajedrez2.h"
-#include "ajedrezbot.h"
 #include <cstdlib>
 #include <stdlib.h>
 
@@ -13,7 +12,6 @@ Inicio inicio;
 Inicio final;
 Ajedrez ajedrez;
 Ajedrez2 ajedrez2;
-Ajedrezbot ajedrezbot;
 int start = 0;
 
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -63,9 +61,8 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	//funciones de dibujo
-	if (start == 1) ajedrez.dibuja(); //dibuja el tablero y las piezas
+	if (start == 1) ajedrez.dibuja(); //6x6
 	else if (start == 2) ajedrez2.dibuja();//4x4
-	else if (start == 3) ajedrezbot.dibuja();//4x4
 	else if (start == 4) 
 	{
 	final.dibuja_final(); //dibuja pantalla fin partida
@@ -113,23 +110,14 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			stopMusica();
 		}
 		break;
-	case '3':
-		if (start == 0)
-		{
-			start = 3;
-			stopMusica();
-		}
-		break;
 	case 27:
 		if (start != 0 && start != 4)
 		{
 			ajedrez.tablero.limpiar_Tablero();
 			ajedrez2.tablero.limpiar_Tablero();
-			ajedrezbot.tablero.limpiar_Tablero();
 			start = 0;
 			ajedrez = Ajedrez();
 			ajedrez2 = Ajedrez2();
-			ajedrezbot = Ajedrezbot();
 		}
 		if (start == 4)
 		{

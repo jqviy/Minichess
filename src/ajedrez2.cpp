@@ -202,7 +202,7 @@ void Ajedrez2::dibuja()
         Instru.setSize(5, 1.16);
         Instru.draw();
         playMusica("sonidos/fin_juegoN2.mp3");
-        //puntuacionNegras += 200;
+        
     }
 
     else if (jaque_mate == 1 && turno == Pieza::BLANCA) {
@@ -213,7 +213,7 @@ void Ajedrez2::dibuja()
         Instru.setSize(5, 1.16);
         Instru.draw();
         playMusica("sonidos/fin_juego2.mp3");
-        //puntuacionBlancas += 200;
+        
 
     }
 
@@ -222,7 +222,7 @@ void Ajedrez2::dibuja()
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
         playMusica("sonidos/jaque2.mp3");
-        //puntuacionNegras += 20;
+       
 
     }
     else if(jaque == 1 && turno == Pieza::BLANCA) {
@@ -230,7 +230,7 @@ void Ajedrez2::dibuja()
         Jaque.setSize(2.64, 1.16);
         Jaque.draw();
         playMusica("sonidos/jaque2.mp3");
-        //puntuacionBlancas += 20;
+        
 
     }
     tablero.dibuja(*this);
@@ -263,10 +263,6 @@ void Ajedrez2::detectaClick(int x, int y, int button, bool down)
     raton.fila = (int)(abs(posY));
     raton.columna = (int)(posX);
 
-    /* Imprimimos las coordenadas y la casilla correspondiente por pantalla
-    std::cout << "Coordenadas del raton: (" << x << ", " << y << ")" << std::endl; // Imprimimos las coordenadas del ratón
-    std::cout << "Casilla: (" << raton.fila << ", " << raton.columna << ")" << std::endl; // Imprimimos las coordenadas de la casilla del tablero
-    */
     //Permite distinguir entre el primer y segundo click (Primer click seleccionar, segundo mover).
     if (down)
     {
