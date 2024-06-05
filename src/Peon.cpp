@@ -3,6 +3,7 @@
 #include "tablero.h"
 #include "tablero2.h"
 
+//MOVIMIENTOS VÁLIDOS PARA TABLERO 6x6
 bool Peon::movimiento_valido(casilla inicio, casilla fin, Tablero& celda) {
 
 		if (color == BLANCA)
@@ -45,6 +46,7 @@ bool Peon::movimiento_valido(casilla inicio, casilla fin, Tablero& celda) {
 		return false;
 }
 
+//MOVIMIENTOS VÁLIDOS PARA TABLERO 4x4
 bool Peon::movimiento_valido(casilla inicio, casilla fin, Tablero2& celda) {
 
 	if (color == BLANCA)

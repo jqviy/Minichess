@@ -9,7 +9,9 @@
 #define NumFilas 6
 #define NumColumnas 6
 
-class Ajedrez; 
+class Ajedrez;
+
+//CLASE PARA CREACIÓN Y MODIFICACIONES DEL TABLERO 6X6
 class Tablero
 {
     int dimension;

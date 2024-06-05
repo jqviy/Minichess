@@ -1,6 +1,7 @@
 #pragma once
 #include "Pieza.h"
 
+//CLASE ENCARGADA DE MOVIMIENTOS E IMÁGENES DE LA PIEZA TORRE
 class Torre:public Pieza
 {
 public:

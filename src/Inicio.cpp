@@ -13,6 +13,8 @@ void Inicio::dibuja_portada()
 	portada.draw();
 
 }
+
+//Dibujo y musica de la pantalla final
 void Inicio::dibuja_final()
 {
 	gluLookAt(4, 4, 15,				// posicion del ojo
@@ -26,6 +28,7 @@ void Inicio::dibuja_final()
 
 }
 
+//CÁLCULO DE PUNTACIONES ELO
 int Inicio::calcularNuevaPuntuacionElo(int puntuacionActual, int puntuacionOponente, int resultado)
 {
 	const int K = 32;  // Constante K
@@ -39,6 +42,7 @@ int Inicio::calcularNuevaPuntuacionElo(int puntuacionActual, int puntuacionOpone
 	return nuevaPuntuacion;
 }
 
+//FUNCIÓN ENCARGADA DE LA GESTIÓN DEL RANKING
 void Inicio::gestorFicheros()
 {
     cout << "\t\t=====PANTALLA INICIO=====\n\n\t\tpulse cuaquiler tecla para continuar\n\n";
@@ -67,7 +71,7 @@ void Inicio::gestorFicheros()
                 getline(cin, nombre);
                 if (nombre.empty())
                 {
-                    cout << "Introduzca un nombre válido\n";
+                    cout << "Introduzca un nombre valido\n";
                     system("pause");
                     system("cls");
                 }
@@ -82,7 +86,7 @@ void Inicio::gestorFicheros()
                 getline(cin, nombre_);
                 if (nombre_.empty())
                 {
-                    cout << "Introduzca un nombre válido\n";
+                    cout << "Introduzca un nombre valido\n";
                     system("pause");
                     system("cls");
                 }
@@ -125,7 +129,7 @@ void Inicio::gestorFicheros()
 
             }
             // Aquí es donde se juega la partida, asignar quién ha ganado
-            cout << "¿Quién ganó la partida? (1: " << nombre << ", 2: " << nombre_ << "): ";
+            cout << "¿Quién ha ganado la partida? (1: " << nombre << ", 2: " << nombre_ << "): ";
             cin >> gana;
 
             // Obtener las puntuaciones actuales de los jugadores
@@ -208,10 +212,9 @@ void Inicio::gestorFicheros()
         default:
             if (op != 3)
             {
-                cout << "Opción incorrecta\n";
+                cout << "Opcion incorrecta\n";
                 cout << "Pulsa cualquier tecla para volver al menu\n";
                 cin.ignore();
-                // cin.get();
             }
             break;
         }

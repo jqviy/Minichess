@@ -1,6 +1,7 @@
 #include "tablero2.h"
 #include "ajedrez2.h"
 
+//CONSTRUCTOR DE TABLERO 4x4
 Tablero2::Tablero2() : dimension(4), x_ojo(0), y_ojo(0), z_ojo(20)
 {
 
@@ -136,6 +137,7 @@ void Tablero2::dibuja(Ajedrez2& ajedrez)
 
 }
 
+//Método encargado de la gestión de coronación de un peón
 void Tablero2::coronapeon(casilla inicio, casilla fin, Ajedrez2& a)
 {
     int pieza;

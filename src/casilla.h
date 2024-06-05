@@ -3,6 +3,7 @@
 #include <cmath>
 using namespace std;
 
+//CLASE AUXILIAR DE TABLERO PARA INTEGRAR LOS MOVIMIENTOS POSIBLES DEL JUEGO
 class casilla
 {
 public:

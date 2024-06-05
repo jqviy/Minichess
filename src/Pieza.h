@@ -9,18 +9,16 @@ using namespace ETSIDI;
 
 class Tablero;
 class Tablero2;
-class Tablerobot;
+
+//CLASE ENCARGADA DE LOS ATRIBUTOS Y MÉTODOS COMUNES A TODAS LAS PIEZAS
 class Pieza
 {	
+
 public:
 	//color de la pieza
 	enum COLOR { NS = -1, BLANCA, NEGRA };
 	//tipo de la pieza
 	enum TIPO { NF = -1, PEON, CABALLO, REINA, REY, TORRE };
-
-	/*virtual void dibuja() {
-		imagen.draw();
-	}*/
 	
 	Pieza(COLOR c, TIPO p, const char* im_b, const char* im_n) :
 		color(c),
@@ -38,6 +36,7 @@ public:
 	virtual bool movimiento_valido(casilla inicio, casilla fin, Tablero2& celda);
 
 	virtual void dibuja() { imagen.draw(); }
+
 protected:
 	TIPO tipo = NF;
 	COLOR color = NS;

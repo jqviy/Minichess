@@ -32,6 +32,8 @@ casilla Ajedrez2::Click_inicio()
 
     return primer;
 }
+
+//Método que el segundo click para elegir el destino de la pieza es válido
 void Ajedrez2::Click_fin(casilla o)
 {
     Ajedrez2 a;
@@ -101,6 +103,8 @@ void Ajedrez2::Click_fin(casilla o)
         click = 0;
     }
 } 
+
+//Método para comprobar si se ha producido jaque
 bool Ajedrez2::compruebaJaque(Tablero2& tablero, Pieza::COLOR color)
 {
     for (int f = 0; f < NumFilas2; f++)
@@ -124,6 +128,8 @@ bool Ajedrez2::compruebaJaque(Tablero2& tablero, Pieza::COLOR color)
     }
     return false;
 }
+
+//Método para comprobar si se ha producido jaque mate
 bool Ajedrez2::compruebaJaqueMate(Pieza::COLOR color)
 {
     vaciarMovimientos_legales();
@@ -142,6 +148,7 @@ bool Ajedrez2::compruebaJaqueMate(Pieza::COLOR color)
     return true;
 }
 
+//Método para comprobar que el movimiento intentado es legal
 void Ajedrez2::calcularMovimientos_legales(casilla o, Pieza::COLOR color)
 {
     Pieza* pieza = tablero[o];
@@ -162,6 +169,7 @@ void Ajedrez2::calcularMovimientos_legales(casilla o, Pieza::COLOR color)
         }
     }
 }
+
 //Función para vaciar los movimientos legales calculados cada vez que una pieza es pulsada con el ratón.
 void Ajedrez2::vaciarMovimientos_legales()
 {
@@ -173,7 +181,7 @@ void Ajedrez2::vaciarMovimientos_legales()
     num_movimientos_legales = 0;
 }
 
-
+//Método que implementa las animaciones de jaque, jaque mate, el fondo y llama a dibujar al tablero 4x4 también
 void Ajedrez2::dibuja()
 {
     gluLookAt(2, 2, 10,                // posicion del ojo
@@ -243,6 +251,8 @@ void Ajedrez2::dibuja()
     
 
 }
+
+//Método para detectar click y su posición
 void Ajedrez2::detectaClick(int x, int y, int button, bool down)
 {
     GLint viewport[4];

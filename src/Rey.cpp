@@ -2,7 +2,7 @@
 #include "Tablero.h"
 #include "tablero2.h"
 
-//Definicion de movimientos validos unitarios + la definicion comun de Pieza 
+//MOVIMIENTOS VÁLIDOS PARA TABLERO 6x6
 bool Rey::movimiento_valido(casilla inicio, casilla fin, Tablero& celda)
 {
 	if (casilla::mRey(inicio, fin) == true)
@@ -11,6 +11,7 @@ bool Rey::movimiento_valido(casilla inicio, casilla fin, Tablero& celda)
 	return false;
 }
 
+//MOVIMIENTOS VÁLIDOS PARA TABLERO 4x4
 bool Rey::movimiento_valido(casilla inicio, casilla fin, Tablero2& celda)
 {
 	if (casilla::mRey(inicio, fin) == true)

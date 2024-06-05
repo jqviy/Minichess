@@ -1,5 +1,7 @@
 #pragma once
 #include "Pieza.h"
+
+//CLASE ENCARGADA DE MOVIMIENTOS E IMÁGENES DE LA PIEZA REY
 class Rey:public Pieza
 {
 public:

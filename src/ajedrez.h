@@ -7,6 +7,7 @@
 
 using ETSIDI::Sprite;
 
+//CLASE PARA GESTIÓN DE LAS REGLAS Y COMPROBACIONES DEL AJEDREZ 6X6
 class Ajedrez
 {
 	

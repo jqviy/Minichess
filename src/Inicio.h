@@ -8,9 +8,9 @@
 #include "ranking.h"
 
 
-//********************************************************************************
+
 //Clase destinada a la creacion de la pantalla inicial previa al tablero de Ajedrez
-//********************************************************************************
+
 
 using ETSIDI::Sprite;
 using ETSIDI::playMusica;

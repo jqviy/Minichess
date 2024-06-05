@@ -5,6 +5,7 @@
 #include "Ranking.h"
 using namespace std;
 
+//Método para guardar elecciones de usuario
 int Ranking::leerNumero()
 {
     int num;
@@ -13,6 +14,7 @@ int Ranking::leerNumero()
     return num;
 }
 
+//Método para añadir jugadores al archivo
 void Ranking::creaJugador(Jugador nuevoJugador)
 {
     ofstream archivo("jugadores.txt", ios::app);
@@ -29,6 +31,7 @@ void Ranking::creaJugador(Jugador nuevoJugador)
     numJugadores++;
 }
 
+//Método para buscar si el jugador ya existe
 int Ranking::buscaJugador(const string& nombre)
 {
     ifstream archivo("jugadores.txt");
@@ -54,6 +57,7 @@ int Ranking::buscaJugador(const string& nombre)
     return -1;
 }
 
+//muestra el ranking completo
 void Ranking::muestraPuntuacion()
 {
     ifstream archivo("jugadores.txt");
@@ -89,6 +93,7 @@ void Ranking::muestraPuntuacion()
     }
 }
 
+//Método que buscar jugador y retorna su puntuación en el ranking
 int Ranking::extraePuntuacion(const string& nombre)
 {
     ifstream archivo("jugadores.txt");
@@ -114,6 +119,7 @@ int Ranking::extraePuntuacion(const string& nombre)
     return -1;
 }
 
+//Método para eliminar jugadores del ranking
 void Ranking::borrarJugador(const string& nombre)
 {
     ifstream archivo("jugadores.txt");

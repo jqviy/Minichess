@@ -1,6 +1,7 @@
 #include "tablero.h"
 #include "ajedrez.h"
 
+//CONSTRUCTOR DE TABLERO 6X6
 Tablero::Tablero() : dimension(6), x_ojo(0), y_ojo(0), z_ojo(20)
 {
     for (int fila = 0; fila < dimension; fila++)
@@ -76,6 +77,7 @@ void Tablero::limpiar_Tablero()
     size_NumComidas = 0;
 }
 
+//Metodo que dibuja el tablero 6x6
 void Tablero::dibuja(Ajedrez& ajedrez)
 {
     //Dibuja de un color verde las casillas a las que es posible mover la pieza seleccionada
@@ -140,6 +142,7 @@ void Tablero::dibuja(Ajedrez& ajedrez)
 
 }
 
+//Método encargado de la gestión de coronación de un peón
 void Tablero::coronapeon(casilla inicio, casilla fin, Ajedrez& a)
 {
     int pieza;

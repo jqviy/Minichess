@@ -9,6 +9,8 @@
 #define NumColumnas2 4
 
 class Ajedrez2;
+
+//CLASE PARA CREACIÓN Y MODIFICACIONES DEL TABLERO 4X4
 class Tablero2
 {
     int dimension;

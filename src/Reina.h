@@ -2,6 +2,7 @@
 #include "Pieza.h"
 #include "tablero2.h"
 
+//CLASE ENCARGADA DE MOVIMIENTOS E IMÁGENES DE LA PIEZA REINA
 class Reina:public Pieza
 {
 public:

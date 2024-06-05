@@ -3,7 +3,7 @@
 #include "tablero2.h"
 
 
-
+//MOVIMIENTOS COMUNES EN TABLERO 6X6
 bool Pieza::movimiento_valido(casilla inicio, casilla fin, Tablero& celda)
 {
 	int aux;
@@ -61,6 +61,7 @@ bool Pieza::movimiento_valido(casilla inicio, casilla fin, Tablero& celda)
 	return true;
 }
 
+//MOVIMIENTOS COMUNES EN TABLERO 4X4
 bool Pieza::movimiento_valido(casilla inicio, casilla fin, Tablero2& celda)
 {
     int aux;

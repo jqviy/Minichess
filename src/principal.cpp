@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//CLASE QUE IMPLEMENTA TODO EL JUEGO, INCLUYENDO EL AJEDREZ 6X6 Y EL 4X4
 Inicio inicio;
 Inicio final;
 Ajedrez ajedrez;
@@ -76,6 +77,8 @@ void OnDraw(void)
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
+
+//Método utilizado para cambiar los estados del juego 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
@@ -157,6 +160,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	glutPostRedisplay();
 }
 
+//Método para habilitar los clicks del ratón
 void onMouse(int button, int state, int x, int y)
 {
 	bool down = (state == GLUT_DOWN);

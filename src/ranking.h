@@ -3,6 +3,7 @@
 #define NOMBREMAX 25
 #include "Jugador.h"
 
+//CLASE ENCARGADA DE LA GESTIÓN DE JUGADORES Y PUNTUACIONES DEL ARCHIVO DEL RANKING
 class Ranking
 {
 public:
