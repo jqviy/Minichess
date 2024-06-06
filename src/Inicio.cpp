@@ -25,7 +25,6 @@ void Inicio::dibuja_final()
 	final.setCenter(3.6, 1.45);
 	final.setSize(14.9, 11.175);
 	final.draw();
-
 }
 
 //CÁLCULO DE PUNTACIONES ELO
@@ -45,17 +44,18 @@ int Inicio::calcularNuevaPuntuacionElo(int puntuacionActual, int puntuacionOpone
 //FUNCIÓN ENCARGADA DE LA GESTIÓN DEL RANKING
 void Inicio::gestorFicheros()
 {
-    cout << "\t\t=====PANTALLA INICIO=====\n\n\t\tpulse cuaquiler tecla para continuar\n\n";
+    /*cout << "\t\t=====PANTALLA INICIO=====\n\n\t\tpulse cuaquiler tecla para continuar\n\n";
     cin.ignore();
     tecla = getchar();
-    system("cls");
+    system("cls");*/
 
     do
     {
         system("cls");
-        cout << "1.JUGAR\n";
+        cout << "\t\t=====BIENVENIDO AL RANKING=====\n*SELECCIONE UNA OPCION*\n\n";
+        cout << "1.JUGADORES\n";
         cout << "2.VER PUNTUACIONES\n";
-        cout << "3.SALIR\n";
+        cout << "3.SALIR\n\n";
         op = ranke.leerNumero();
         string nombre, nombre1;
         string nombre_, nombre1_;
@@ -129,7 +129,7 @@ void Inicio::gestorFicheros()
 
             }
             // Aquí es donde se juega la partida, asignar quién ha ganado
-            cout << "¿Quién ha ganado la partida? (1: " << nombre << ", 2: " << nombre_ << "): ";
+            cout << "Quien ha ganado la partida? (1: " << nombre << ", 2: " << nombre_ << "): ";
             cin >> gana;
 
             // Obtener las puntuaciones actuales de los jugadores

@@ -64,11 +64,15 @@ void OnDraw(void)
 	//funciones de dibujo
 	if (start == 1) ajedrez.dibuja(); //6x6
 	else if (start == 2) ajedrez2.dibuja();//4x4
-	else if (start == 4) 
+	else if (start == 4)
 	{
-	final.dibuja_final(); //dibuja pantalla fin partida
+		final.dibuja_final(); //dibuja pantalla fin partida
+		cout << endl << "PULSE LA TECLA ESCAPE PARA ABANDONAR EL JUEGO" << endl;
+		cout << endl << "PULSE LA TECLA ESPACIO PARA ESTABLECER RANKING" << endl;
+	}
+	else if (start == 5) 
+	{
 	final.gestorFicheros();
-	cout << endl << "PULSE LA TECLA ESCAPE PARA ABANDONAR EL JUEGO" << endl; 
 	}
 	else inicio.dibuja_portada();
 
@@ -128,6 +132,12 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 			exit(0);
 		}
 		break;
+	case '3':
+		if (start == 5)
+		{
+			exit(0);
+		}
+		break;
 	case 'P':
 		if (start != 0 && start != 4)
 		{
@@ -154,6 +164,12 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 		if (start == 1 || start == 2)
 		{
 			start = 4;
+		}
+		break;
+	case ' ':
+		if (start == 4)
+		{
+			start = 5;
 		}
 		break;
 	}
