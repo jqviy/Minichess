@@ -204,6 +204,9 @@ void Inicio::gestorFicheros()
             cin.ignore();
             cin.get();
             break;
+        case 3: 
+            exit(0);
+            break;
         default:
             if (op != 3)
             {
