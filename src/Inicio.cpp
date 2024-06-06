@@ -44,11 +44,6 @@ int Inicio::calcularNuevaPuntuacionElo(int puntuacionActual, int puntuacionOpone
 //FUNCIÓN ENCARGADA DE LA GESTIÓN DEL RANKING
 void Inicio::gestorFicheros()
 {
-    /*cout << "\t\t=====PANTALLA INICIO=====\n\n\t\tpulse cuaquiler tecla para continuar\n\n";
-    cin.ignore();
-    tecla = getchar();
-    system("cls");*/
-
     do
     {
         system("cls");
