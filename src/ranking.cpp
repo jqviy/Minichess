@@ -154,5 +154,5 @@ void Ranking::borrarJugador(const string& nombre)
     remove("jugadores.txt");
     rename("temp.txt", "jugadores.txt");
 
-    cout << "Jugador borrado exitosamente.\n";
+    cout << "Jugador guardado exitosamente.\n";
 }
