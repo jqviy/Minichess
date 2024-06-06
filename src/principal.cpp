@@ -118,12 +118,16 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 		}
 		break;
 	case 27:
-		if (start != 0 && start != 4)
+		if (start == 1)
 		{
 			ajedrez.tablero.limpiar_Tablero();
-			ajedrez2.tablero.limpiar_Tablero();
 			start = 0;
 			ajedrez = Ajedrez();
+		}
+		if (start == 2)
+		{
+			ajedrez2.tablero.limpiar_Tablero();
+			start = 0;
 			ajedrez2 = Ajedrez2();
 		}
 		if (start == 4)
